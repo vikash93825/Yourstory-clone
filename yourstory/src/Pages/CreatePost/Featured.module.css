@@ -1,0 +1,72 @@
+.displayFlex {
+  display: flex;
+}
+
+.margin20 {
+  margin: 20px;
+}
+
+.colorRed {
+  color: red;
+}
+
+.titleTextArea {
+  width: 650px;
+  border: 3px solid green;
+  height: 210px;
+  text-align: none;
+}
+
+.subTitleTextArea {
+  width: 650px;
+  border: 3px solid green;
+  height: 130px;
+  text-align: none;
+}
+
+.selectMyStory {
+  width: 300px;
+  padding: 5px;
+}
+
+.margin10 {
+  margin: 10px;
+}
+
+.tagSelect {
+  width: 850px;
+  padding: 10px;
+}
+
+.addTagBtn {
+  margin: 10px;
+  padding-top: 25px;
+}
+
+.textAreaForDuplicatecontent {
+  width: 95%;
+  height: 25px;
+  text-align: none;
+  background: cyan;
+}
+
+.paddingLeft {
+  padding-left: 40px;
+}
+
+.updateBtn {
+  padding: 10px;
+  margin: 10px;
+}
+
+.reviewBtn {
+  padding: 10px;
+  margin: 10px;
+  margin-right: 1px;
+}
+
+.upArrowBtn {
+  padding: 10px;
+  margin: 10px;
+  margin-left: 1px;
+}
