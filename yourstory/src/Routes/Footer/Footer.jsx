@@ -9,7 +9,7 @@ const Footer = () => {
             <div className="row"  >
                 <div className="col-lg-4 col-md-4 col-sm-6">
                     <div className={styles.main}>
-                        <div style={{display:"flex"}} >
+                        <div style={{display:"flex",flexDirection:"column"}} >
                             <div>
                                 <img src="https://images.yourstory.com/assets/images/social_icons/twitter2x.png" width="30px" />
                             </div>
