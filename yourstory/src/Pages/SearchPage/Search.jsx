@@ -10,6 +10,7 @@ import {
 } from "@material-ui/core";
 import { StoryCard } from "./StoryCard";
 import Styles from "./Search.module.css";
+import SearchBar from "../../Component/SearchBar";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,6 +25,8 @@ const useStyles = makeStyles((theme) => ({
 const Search = () => {
   const classes = useStyles();
   return (
+    <div>
+      <SearchBar/>
     <div style={{ display: "flex", margin: "100px auto" }}>
       <div style={{ width: "15%" }}>
         <Hidden xsDown implementation="css">
@@ -68,7 +71,7 @@ const Search = () => {
               <FormControlLabel
                 control={<Checkbox name="gilad" />}
                 label="Gilad Gray"
-              />
+                />
               <FormControlLabel
                 control={<Checkbox name="gilad" />}
                 label="Gilad Gray"
@@ -92,6 +95,7 @@ const Search = () => {
         </Grid>
       </div>
     </div>
+</div>
   );
 };
 
