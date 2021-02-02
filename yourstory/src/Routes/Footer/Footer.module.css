@@ -1,0 +1,41 @@
+.mybtn{
+    background-color: #9c3353;
+    border: none;
+    box-shadow: rgba(156, 51, 83, 0.2) 0px 0px 6px 0px;
+    border-radius: 30px;
+    font-family: AvenirLTPro-Medium;
+    font-size: 20px;
+    width: 300px;
+    line-height: 36px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    color: white !important;
+    padding: 5px 30px 5px 30px;
+}
+
+.price{
+    display: flex;
+}
+
+.price > * {
+    color:#9c3353 !important;
+}
+
+.name{
+    font-weight: bold;
+    margin-left: 10px;
+}
+.main > *{
+    padding: 10px;
+    
+}
+
+.office{
+    font-weight: bold;
+    
+}
+
+.main > * > *{
+    padding: 10px;
+}
+
