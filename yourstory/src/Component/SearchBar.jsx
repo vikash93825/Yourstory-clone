@@ -20,7 +20,7 @@ function SearchBar() {
           />
         </div>
         <div>
-          <Button variant="contained" color="secondary" style={{background:"#ef4136",margin:"10px"}}>
+          <Button variant="contained" color="secondary" style={{background:"#ef4136",margin:"12px"}}>
             List Your Companies
           </Button>
         </div>
