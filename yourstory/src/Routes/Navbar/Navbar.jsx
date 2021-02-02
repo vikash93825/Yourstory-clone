@@ -16,17 +16,27 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 
 const useStyles = makeStyles((theme) => ({
+    hr:{
+        border:"none",
+        borderTop:"1px dotted #000000",
+        marginBottom:40
+    },
     pad:{
         marginTop: -20,
         '& > *':{
             paddingLeft: 10,
             paddingRight: 10,
+            paddingTop: 10,
         }
         
     },
 
     grow: {
         flexGrow: 1,
+        position: '-webkit-sticky',
+        position: 'sticky',
+        top: 0,
+        zIndex: 5,
     },
     menuButton: {
         marginRight: theme.spacing(2),
@@ -120,7 +130,7 @@ export default function Navbar() {
         >
         <MenuItem>
             <IconButton aria-label="show 4 new mails" color="inherit">
-            <Badge badgeContent={4} color="secondary">
+            <Badge color="secondary">
                 <MailIcon />
             </Badge>
             </IconButton>
@@ -128,7 +138,7 @@ export default function Navbar() {
         </MenuItem>
         <MenuItem>
             <IconButton aria-label="show 11 new notifications" color="inherit">
-            <Badge badgeContent={11} color="#212121">
+            <Badge color="#212121">
                 <NotificationsIcon />
             </Badge>
             </IconButton>
@@ -150,7 +160,7 @@ export default function Navbar() {
 
     return (
         <div className={classes.grow} >
-        <AppBar position="static" style={{ background: 'transparent', boxShadow: 'none'}}>
+        <AppBar position="static" style={{ background: 'white', boxShadow: 'none'}}>
             <Toolbar className={classes.pad}>
             
             <Typography style={{color:"#212121"}} variant="h8" noWrap>
@@ -178,7 +188,7 @@ export default function Navbar() {
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
                 <IconButton aria-label="show 4 new mails" color="inherit">
-                <Badge badgeContent={4} style={{color:"#bf360c"}}>
+                <Badge style={{color:"#bf360c"}}>
                     <MailIcon />
                 </Badge>
                 </IconButton>
@@ -205,7 +215,9 @@ export default function Navbar() {
                 </IconButton>
             </div>
             </Toolbar>
+            
         </AppBar>
+        <div className={classes.hr}></div>
         {renderMobileMenu}
         {renderMenu}
         </div>

@@ -5,6 +5,7 @@ import Footer from './Footer/Footer';
 import Navbar from './Navbar/Navbar'
 import Topbar from './Navbar/Topbar'
 import {Search} from '../Pages/SearchPage/Search'
+import LandingPage from '../Pages/LandingPage/LandingPage';
 
 const Routes = () => {
     return (
@@ -12,10 +13,10 @@ const Routes = () => {
             <Route path="/" render={()=><Topbar/>}/>
             <Route path="/" render={()=><Navbar/>}/>
             <Switch>
+                <Route path="/" exact render={()=> <LandingPage/>} />
                 <Route path="/search" exact render={()=><Search/>}/>
             </Switch>
             <Route path="/" render={()=><Footer/>}/>
-
         </div>
     );
 }

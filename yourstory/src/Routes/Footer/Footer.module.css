@@ -30,6 +30,19 @@
     
 }
 
+.main > * > * {
+    text-decoration: none;
+}
+
+.main > * > *  {
+    color: #000000;
+}
+
+.main > * > *:hover {
+    color: #af3535;
+}
+
+
 .office{
     font-weight: bold;
     
