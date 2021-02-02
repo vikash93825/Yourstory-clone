@@ -1,17 +1,17 @@
-import { Route, Switch } from "react-router-dom"
-import React from "react"
-import { Search } from "../Pages/SearchPage/Search"
+import { Toolbar } from '@material-ui/core';
+import React from 'react';
+import Footer from './Footer/Footer';
+import Navbar from './Navbar/Navbar'
+import Topbar from './Navbar/Topbar'
 
-
-const Routes = () =>{
-    return(
+const Routes = () => {
+    return (
         <div>
-            <Switch>
-                <Route path="/search" render={()=><Search/>}/>
-            </Switch>
+            <Topbar/>
+            <Navbar/>
+            <Footer/>
         </div>
-    )
-
+    );
 }
 
-export {Routes}
+export default Routes;
