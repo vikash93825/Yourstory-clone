@@ -1,15 +1,21 @@
 import { Toolbar } from '@material-ui/core';
 import React from 'react';
+import {Switch , Route} from 'react-router-dom';
 import Footer from './Footer/Footer';
 import Navbar from './Navbar/Navbar'
 import Topbar from './Navbar/Topbar'
+import {Search} from '../Pages/SearchPage/Search'
 
 const Routes = () => {
     return (
         <div>
-            <Topbar/>
-            <Navbar/>
-            <Footer/>
+            <Route path="/" render={()=><Topbar/>}/>
+            <Route path="/" render={()=><Navbar/>}/>
+            <Switch>
+                <Route path="/search" exact render={()=><Search/>}/>
+            </Switch>
+            <Route path="/" render={()=><Footer/>}/>
+
         </div>
     );
 }
