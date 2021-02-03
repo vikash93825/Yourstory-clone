@@ -6,18 +6,20 @@ import Footer from './Footer/Footer';
 import Navbar from './Navbar/Navbar'
 import Topbar from './Navbar/Topbar'
 import { Story } from '../Pages/StoryPage/Story';
+import LandingPage from '../Pages/LandingPage/LandingPage';
 
 const Routes = () => {
     return (
         <div>
-            <Topbar/>
-            
-            <Route path="/"   render={()=><Navbar/>}/>
+          
+            <Route path="/" render={()=><Topbar/>}/>
+            <Route path="/" render={()=><Navbar/>}/>
             <Switch>
-                <Route path="/search"  render={()=><Search/>}/>
+                <Route path="/" exact render={()=> <LandingPage/>} />
+                <Route path="/search" exact render={()=><Search/>}/>
                 <Route path="/story" render={()=><Story/>}/> 
             </Switch>
-            <Footer/>
+            <Route path="/" render={()=><Footer/>}/>
         </div>
     );
 }
