@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import Carousal from './Carousal';
+
 import { makeStyles } from "@material-ui/core/styles";
 import {useDispatch, useSelector} from 'react-redux';
 import {fetchSourceData} from '../../Redux/DataRedux/actionCreator'
@@ -26,7 +26,7 @@ const useStyles = makeStyles({
         
     },
     right:{
-        paddingRight: 100
+        paddingLeft: 100
     },
     media: {
         height: 340,
@@ -49,9 +49,8 @@ const LandingPage = () => {
 
     return (
         <div>
-        <Grid container className={classes.right} >
-            {/* <Carousal/> */}
-            <Grid xs={12} md={8} lg={8} className={classes.main}>
+        <Grid container>
+            <Grid item xs={12} md={8} lg={8} className={classes.main}>
                 <Card className={classes.root}>
                     <CardActionArea>
                     <CardMedia
@@ -76,25 +75,20 @@ const LandingPage = () => {
                 </Card>
             </Grid>
 
-            <Grid xs={12} md={4} lg={4}>
-                <div className={styles.stcard} >
-                    <img src="https://images.yourstory.com/assets/icons/indepth_icon.svg" width="30px" />
-                    <div>
-                        <div className={styles.head}>Budget 2021</div>
-                        <div>Featuring budget 2021 stories</div>
-                    </div>
-                </div>
+            <Grid item xs={12} md={4} lg={4} >
+                <Grid container >
                 <Grid xs={6} md={12} lg={12} >
                     <SideCard/>
                 </Grid>
                 <Grid xs={6} md={12} lg={12} >
-                    <SideCard/>
+                <SideCard/>
                 </Grid>
                 <Grid xs={6} md={12} lg={12} >
-                    <SideCard/>
+                <SideCard/>
                 </Grid>
                 <Grid xs={6} md={12} lg={12} >
-                    <SideCard/>
+                <SideCard/>
+                </Grid>
                 </Grid>
             </Grid>
         </Grid>

@@ -2,13 +2,14 @@ import React from 'react';
 import {Link} from 'react-router-dom'
 import styles from './Footer.module.css';
 import Button from '@material-ui/core/Button';
+import { Grid } from '@material-ui/core';
 
 const Footer = () => {
     return (
         <div className={styles.foot}>
             <hr/>
-            <div className="row"  >
-                <div className="col-lg-4 col-md-4 col-sm-6">
+            <Grid container>
+                <Grid xs={12} md={4} lg={4}>
                     <div className={styles.main}>
                         <div style={{display:"flex"}} >
                             <div>
@@ -38,9 +39,9 @@ const Footer = () => {
                         </Button>
                         </div>
                     </div>
-                </div>
+                </Grid>
 
-                <div className="col-lg-2 col-md-4 col-sm-6"  >
+                <Grid xs={12} md={2} lg={2}>
                     <div className={styles.main}>
                         <div className={styles.name} >Topics</div>
                         <div>
@@ -56,9 +57,9 @@ const Footer = () => {
                             <Link>Expert Opinion</Link>
                         </div>
                     </div>
-                </div>
+                </Grid>
 
-                <div className="col-lg-2 col-md-4 col-sm-6"  >
+                <Grid xs={12} md={2} lg={2}>
                     <div className={styles.main}>
                         <div>
                             <Link>App Friday</Link>
@@ -70,9 +71,9 @@ const Footer = () => {
                             <Link>Resources</Link>
                         </div>
                     </div>
-                </div>
+                </Grid>
 
-                <div className="col-lg-2 col-md-4 col-sm-6">
+                <Grid xs={12} md={2} lg={2}>
                     <div className={styles.main}>
                         <div className={styles.name} >About</div>
                         <div>
@@ -88,9 +89,9 @@ const Footer = () => {
                             <Link>Events</Link>
                         </div>
                     </div>
-                </div>
+                </Grid>
 
-                <div className="col-lg-2 col-md-4 col-sm-6">
+                <Grid xs={12} md={2} lg={2}>
                     <div className={styles.main}>
                         
                         <div>
@@ -103,9 +104,9 @@ const Footer = () => {
                             <Link>Work with Us</Link>
                         </div>
                     </div>
-                </div>
+                </Grid>
 
-            </div>
+            </Grid>
         </div>
     );
 }

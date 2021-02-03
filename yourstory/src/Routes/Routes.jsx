@@ -1,20 +1,23 @@
-import { Toolbar } from '@material-ui/core';
+import { Switch, Toolbar } from 'react-router-dom';
 import React from 'react';
-import {Switch , Route} from 'react-router-dom';
+import { Route } from 'react-router-dom';
+import { Search } from '../Pages/SearchPage/Search';
 import Footer from './Footer/Footer';
 import Navbar from './Navbar/Navbar'
 import Topbar from './Navbar/Topbar'
-import {Search} from '../Pages/SearchPage/Search'
+import { Story } from '../Pages/StoryPage/Story';
 import LandingPage from '../Pages/LandingPage/LandingPage';
 
 const Routes = () => {
     return (
         <div>
+        
             <Route path="/" render={()=><Topbar/>}/>
             <Route path="/" render={()=><Navbar/>}/>
             <Switch>
                 <Route path="/" exact render={()=> <LandingPage/>} />
                 <Route path="/search" exact render={()=><Search/>}/>
+                <Route path="/story" render={()=><Story/>}/> 
             </Switch>
             <Route path="/" render={()=><Footer/>}/>
         </div>

@@ -26,10 +26,13 @@ const Search = () => {
   const classes = useStyles();
   return (
     <div>
-      <SearchBar/>
+        <div className={Styles.search}>
+          <SearchBar/>
+        </div>
+      
     <div style={{ display: "flex", margin: "100px auto" }}>
-      <div style={{ width: "15%" }}>
-        <Hidden xsDown implementation="css">
+      <div style={{ width: "15%" ,margin:"10px"}}>
+        <Hidden smDown implementation="css">
           <Typography variant="h4" component="h4">
             Filter
           </Typography>
@@ -71,6 +74,7 @@ const Search = () => {
               <FormControlLabel
                 control={<Checkbox name="gilad" />}
                 label="Gilad Gray"
+              
                 />
               <FormControlLabel
                 control={<Checkbox name="gilad" />}
