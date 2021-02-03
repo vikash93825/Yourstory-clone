@@ -5,7 +5,7 @@ import Button from '@material-ui/core/Button';
 
 const Footer = () => {
     return (
-        <div>
+        <div className={styles.foot}>
             <hr/>
             <div className="row"  >
                 <div className="col-lg-4 col-md-4 col-sm-6">

@@ -1,4 +1,5 @@
 import axios from "axios";
+import {FETCH_SOURCE_REQUEST, FETCH_SOURCE_SUCCESS,FETCH_SOURCE_FAILURE} from './actionTypes'
 
 // action creators
 export const fetchSourceRequest = query => {
@@ -32,11 +33,11 @@ export const fetchSourceData = () => dispatch => {
     console.log("dispatching post request action...");
     dispatch(fetchSourceRequest());
     return axios
-      .get(`hhttp://localhost:3000/`)
+      .get(`http://localhost:3004/sources`)
       .then(res => {
-        console.log("response success", res.data.items);
+        //console.log("response success", res.data);
         // do some logic on response if required
-        dispatch(fetchSourceSuccess(res.data.items));
+        dispatch(fetchSourceSuccess(res.data));
       })
       .catch(err => dispatch(fetchSourceFailure(err)));
   };

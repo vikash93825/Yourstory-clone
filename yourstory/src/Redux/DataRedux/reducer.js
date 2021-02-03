@@ -2,7 +2,7 @@ import {
     FETCH_SOURCE_REQUEST,
     FETCH_SOURCE_SUCCESS,
     FETCH_SOURCE_FAILURE
-  } from "./action";
+  } from "./actionTypes";
   
   const initStore = {
     isLoading: false,
@@ -22,7 +22,7 @@ import {
       case FETCH_SOURCE_SUCCESS:  
         return {
           isLoading: false,
-          data: action.data,
+          source: action.data,
           error: state.error
         };
       case FETCH_SOURCE_FAILURE:

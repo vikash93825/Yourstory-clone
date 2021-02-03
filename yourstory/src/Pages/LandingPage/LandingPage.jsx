@@ -1,6 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Carousal from './Carousal';
 import { makeStyles } from "@material-ui/core/styles";
+import {useDispatch, useSelector} from 'react-redux';
+import {fetchSourceData} from '../../Redux/DataRedux/actionCreator'
+import SideCard from './SideCard'
+import CardComponent from './CardComponent'
+import styles from './LandingPage.module.css'
 
 import {
     Card,
@@ -12,33 +17,46 @@ import {
     Typography,
     Grid,
 } from "@material-ui/core";
+import BottomCard from './BottomCard';
 
 const useStyles = makeStyles({
     root: {
         maxWidth: 650,
+        
+    },
+    right:{
+        paddingRight: 100
     },
     media: {
         height: 340,
+        borderRadius: 10
     },
     main: {
         paddingLeft: 120,
-    }
+    },
 });
 
 const LandingPage = () => {
     const classes = useStyles();
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(fetchSourceData())
+    }, []);
+
+    const source = useSelector(state => state.source)
+    console.log(source)
 
     return (
-        <Grid container spacing={3}>
+        <div>
+        <Grid container className={classes.right} >
             {/* <Carousal/> */}
-            <Grid xs={8} md={8} className={classes.main}>
+            <Grid xs={12} md={8} lg={8} className={classes.main}>
                 <Card className={classes.root}>
                     <CardActionArea>
                     <CardMedia
                         className={classes.media}
                         image="https://images.yourstory.com/cs/2/77e43870d62911eaa8e9879653a67226/FM1-1612087221141.png?fm=png&auto=format&ar=2:1&mode=crop&crop=face"
                         title="Contemplative Reptile"
-                        
                     />
                     <CardContent>
                         <Typography gutterBottom variant="p" component="p" style={{}}>
@@ -57,12 +75,35 @@ const LandingPage = () => {
                 </Card>
             </Grid>
 
-            <Grid xs={4} md={4}>
-                <Card className={classes.root}>
-                    
-                </Card>
+            <Grid xs={12} md={4} lg={4}>
+                <div className={styles.stcard} >
+                    <img src="https://images.yourstory.com/assets/icons/indepth_icon.svg" width="30px" />
+                    <div>
+                        <div className={styles.head}>Budget 2021</div>
+                        <div>Featuring budget 2021 stories</div>
+                    </div>
+                </div>
+                <Grid xs={6} md={12} lg={12} >
+                    <SideCard/>
+                </Grid>
+                <Grid xs={6} md={12} lg={12} >
+                    <SideCard/>
+                </Grid>
+                <Grid xs={6} md={12} lg={12} >
+                    <SideCard/>
+                </Grid>
+                <Grid xs={6} md={12} lg={12} >
+                    <SideCard/>
+                </Grid>
             </Grid>
         </Grid>
+
+        <BottomCard/>
+        <BottomCard/>
+        <BottomCard/>
+        <BottomCard/>
+        <BottomCard/>
+    </div>
     );
 }
 
