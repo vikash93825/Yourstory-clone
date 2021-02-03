@@ -6,6 +6,7 @@ import {fetchSourceData} from '../../Redux/DataRedux/actionCreator'
 import SideCard from './SideCard'
 import CardComponent from './CardComponent'
 import styles from './LandingPage.module.css'
+//import Carousel from 'react-elastic-carousel'
 
 import {
     Card,
