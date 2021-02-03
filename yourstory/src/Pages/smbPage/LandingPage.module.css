@@ -1,0 +1,17 @@
+.stcard{
+    display: flex;
+    
+}
+
+.pad{
+    margin-left: -50px;
+}
+
+.stcard > * {
+    margin: 10px;
+}
+
+.head{
+    font-size: 20px;
+    font-weight: bold;
+}

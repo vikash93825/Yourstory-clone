@@ -7,6 +7,8 @@ import Navbar from './Navbar/Navbar'
 import Topbar from './Navbar/Topbar'
 import { Story } from '../Pages/StoryPage/Story';
 import LandingPage from '../Pages/LandingPage/LandingPage';
+import SmbPage from '../Pages/smbPage/SmbPage';
+import {YourStoryComp} from '../Pages/YourstoryTv/YourStoryComp';
 
 const Routes = () => {
     return (
@@ -17,7 +19,9 @@ const Routes = () => {
             <Switch>
                 <Route path="/" exact render={()=> <LandingPage/>} />
                 <Route path="/search" exact render={()=><Search/>}/>
-                <Route path="/story" render={()=><Story/>}/> 
+                <Route path="/story" render={()=><Story/>}/>
+                <Route path="/smbstory" render={()=> <SmbPage/>} />
+                <Route path="/videos" render={()=> <YourStoryComp/>} /> 
             </Switch>
             <Route path="/" render={()=><Footer/>}/>
         </div>

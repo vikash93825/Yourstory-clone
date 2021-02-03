@@ -19,8 +19,6 @@ import {
     Grid,
 } from "@material-ui/core";
 import BottomCard from './BottomCard';
-import {Carousal} from './Carousal';
-import YourstoryTv from '../YourstoryTv/YourstoryTv';
 
 const useStyles = makeStyles({
     root: {
@@ -39,7 +37,7 @@ const useStyles = makeStyles({
     },
 });
 
-const LandingPage = () => {
+const SmbPage = () => {
     const classes = useStyles();
     const dispatch = useDispatch()
     useEffect(() => {
@@ -100,11 +98,8 @@ const LandingPage = () => {
         <BottomCard/>
         <BottomCard/>
         <BottomCard/>
-
-        <Carousal/>
-        
     </div>
     );
 }
 
-export default LandingPage;
+export default SmbPage;
