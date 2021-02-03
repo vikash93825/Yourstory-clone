@@ -21,8 +21,10 @@ const useStyles = makeStyles({
   },
 });
 
-const StoryCard = () => {
+const StoryCard = (props) => {
   const classes = useStyles();
+  const {title,description,date,img_url} = props.element;
+  console.log(description)
 
   return (
     <div className={styles.card}>
@@ -30,16 +32,16 @@ const StoryCard = () => {
         <CardActionArea>
           <CardMedia
             className={classes.media}
-            image="https://images.yourstory.com/cs/2/77e43870d62911eaa8e9879653a67226/FM1-1612087221141.png?fm=png&auto=format&ar=2:1&mode=crop&crop=face"
+            image={`${img_url}`}
             title="Contemplative Reptile"
             
           />
           <CardContent>
             <Typography gutterBottom variant="p" component="p" style={{}}>
-              02/02/2021
+              {date}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-            Budget 2021 positions India towards its target of $5T economy: USISPF
+            {description}
             </Typography>
           </CardContent>
         </CardActionArea>

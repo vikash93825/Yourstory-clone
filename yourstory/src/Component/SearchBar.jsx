@@ -1,13 +1,30 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
+
 import TextField from '@material-ui/core/TextField';
+import {filterBySearch} from "../Redux/DataRedux/actionCreator" 
 
-
-function SearchBar() {
+function SearchBar(props) {
+    const { newsData } = props;
+    const [ filterData, setFilterData] = useState(newsData)
     const [ query, setQuery ] = useState('');
+    const dispatch = useDispatch()
 
+    const handleSearch = (e) => {
+        setQuery(e.target.value)
+        let data = newsData.filter((item)=>item.description.toLowerCase().indexOf(query) !== -1?true: false)
+        setFilterData(data)
+        console.log(filterData);
+    }
+    
+    useEffect(() => {
+        dispatch(filterBySearch(filterData))
+        console.log(filterData);
+      },[query]);
+
+    console.log(query)
     return (
         <div>
-            <form noValidate > 
         <div>        
         <TextField 
             id="outlined-search" 
@@ -15,10 +32,10 @@ function SearchBar() {
             type="search" 
             variant="outlined" 
             value={query}
-            onChange={(e)=>setQuery(e.target.value)}
+            onChange={handleSearch}
         />
       </div>
-    </form>
+        {/* <button onClick={handleSearch}>Search</button> */}
     </div>
     )
 }
