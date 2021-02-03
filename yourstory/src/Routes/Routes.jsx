@@ -5,6 +5,7 @@ import { Search } from '../Pages/SearchPage/Search';
 import Footer from './Footer/Footer';
 import Navbar from './Navbar/Navbar'
 import Topbar from './Navbar/Topbar'
+import { Story } from '../Pages/StoryPage/Story';
 
 const Routes = () => {
     return (
@@ -14,6 +15,7 @@ const Routes = () => {
             <Route path="/"   render={()=><Navbar/>}/>
             <Switch>
                 <Route path="/search"  render={()=><Search/>}/>
+                <Route path="/story" render={()=><Story/>}/> 
             </Switch>
             <Footer/>
         </div>

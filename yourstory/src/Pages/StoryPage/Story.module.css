@@ -1,0 +1,196 @@
+.tags{
+    padding:10px;
+    font-size: 15px;
+    color: white;
+}
+
+.facebook{
+    display: flex;
+}
+
+.wats{
+    background-color: #25d366;
+
+}
+
+.facebook > * {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.date{
+    border-radius: 5px;
+}
+
+.progress-bar {
+    background-color: red;
+}
+
+.date> p{
+    font-size: 20px;
+    color:#777777
+}
+
+.wats{
+    background-color: #25d366;
+    color: white;
+    padding: 20px 20px 0px 20px;
+    border-radius: 5px;
+}
+
+.wats > p {
+    font-size: 20px;
+}
+
+.bold{
+    font-size: 30px;
+    font-weight: bold;
+    color: #b91141;
+}
+
+.facebook > div > p:nth-child(2){
+    margin-top: -40px;
+}
+
+.paddin{
+    margin-bottom: 20px;
+}
+
+.life{
+    text-align: start;
+    font-size: 41.6px;
+    color: #323232;
+    font-weight: bold;
+    font-family:aktiv-grotesk, sans-serif ;
+    line-height: 56px;
+    letter-spacing: normal;
+}
+
+.raised{
+    display: flex;
+}
+
+.bank{
+    font-size: 20px;
+    padding: 10px;
+    border: 1px solid grey;
+}
+
+.story > p {
+    text-align: left;
+    
+}
+
+.donate {
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+.details{
+    padding: 10px;
+    font-size: 25px;
+    border: 1px solid rgb(202, 200, 200);
+}
+
+.story{
+    margin-top: 30px;
+}
+
+.story > p:nth-child(1){
+    font-size: 25px;
+}
+
+.raised > div:nth-child(1){
+    color:#b91141;
+    font-size: 30px;
+    padding-right: 10px;
+}
+
+.raised > div:nth-child(2){
+    margin-top: 10px;
+}
+
+.goal{
+    display: flex;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+.goal > * {
+    padding-right: 50px;
+    font-size: 15px;
+}
+
+.donate{
+    font-size: 20px;
+}
+/* 
+.border > p {
+ 
+    font-size: 18px;
+} */
+
+.main{
+    margin-top: 100px;
+    padding: 0 15% 0 15%;
+}
+
+.modalcard{
+    margin: auto;
+    width: 300px;
+    color: white;
+    border: none;
+    outline: none;
+    margin-top: 30px;
+}
+.modalcard > button {
+    padding: 10px 30px 10px 30px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.option{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-gap: 5px;
+}
+
+.option > div > select {
+    padding: 10px;
+    
+}
+
+.form {
+    padding-right: 40px;
+}
+
+.form > button {
+    margin: 20px;
+    text-align: center;
+    color: white;
+    background-color: #b91141;
+}
+
+.qoutes{
+    color: #3b3839;
+    width: 100%;
+    padding: 10px;
+    font-family:museo-sans, sans-serif ;
+    font-size: 20px;
+    line-height: 32px;
+    text-align: start;
+    letter-spacing: normal;
+}
+
+.place > input {
+    width: 480px;
+}
+
+.name{
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+.marks{
+    display: flex;
+}
