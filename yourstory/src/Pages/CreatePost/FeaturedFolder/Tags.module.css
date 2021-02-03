@@ -1,0 +1,24 @@
+.displayFlex {
+  display: flex;
+}
+
+.tagSelect {
+  width: 850px;
+  padding: 10px;
+}
+
+.addTagBtn {
+  margin: 10px;
+  padding-top: 25px;
+}
+
+.margin10 {
+  margin: 10px;
+}
+
+.titleSvg {
+  width: 15px;
+}
+.titleSvg :hover {
+  cursor: pointer;
+}

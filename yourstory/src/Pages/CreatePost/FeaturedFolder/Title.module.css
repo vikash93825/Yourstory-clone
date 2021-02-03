@@ -1,0 +1,55 @@
+.titleTextArea {
+  width: 100%;
+  border: 1px solid cyan;
+  height: 200px;
+  text-align: none;
+  resize: none;
+}
+
+.subTitleTextArea {
+  width: 100%;
+  border: 1px solid cyan;
+  height: 130px;
+  text-align: none;
+  resize: none;
+}
+
+textarea ::placeholder {
+  color: darkgreen;
+  font-size: 200px;
+  font-weight: 600;
+}
+
+.titleSvg {
+  width: 15px;
+}
+.titleSvg :hover {
+  cursor: pointer;
+}
+
+.displayFlexSpaceBitween {
+  display: flex;
+  justify-content: space-between;
+}
+
+.margin50Bottom0 {
+  margin: 50px;
+  margin-bottom: 3px;
+}
+
+.margin50Top0 {
+  margin: 50px;
+  margin-top: 3px;
+}
+
+.colorRed {
+  color: red;
+}
+
+.colorCyan {
+  color: rgb(0, 255, 242);
+}
+
+.displayFlex {
+  display: flex;
+}

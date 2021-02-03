@@ -70,3 +70,21 @@
   margin: 10px;
   margin-left: 1px;
 }
+
+.imageFile {
+  height: 150px;
+  width: 200px;
+  padding: 10px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.customfileupload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  margin: 200px;
+}
