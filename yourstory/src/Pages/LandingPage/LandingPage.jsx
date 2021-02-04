@@ -42,6 +42,7 @@ const useStyles = makeStyles({
 const LandingPage = () => {
     const classes = useStyles();
     const dispatch = useDispatch()
+    
     useEffect(() => {
         dispatch(fetchSourceData())
     }, []);
