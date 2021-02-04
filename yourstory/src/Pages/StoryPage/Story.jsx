@@ -1,6 +1,6 @@
 import React from "react"
 import styles from "./Story.module.css"
-import { Container, Hidden,Button,Card } from "@material-ui/core"
+import { Container, Hidden,Button,Card ,Divider} from "@material-ui/core"
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 
 
@@ -30,50 +30,26 @@ const Story = () =>{
                     </div>
 
                     <div className={styles.marks}>
-                        <div>clap</div>
+                        <div style={{color:"#a8a8a8"}}>
+                            <span style={{marginRight:"10px"}}>CLAP</span>
+                            <img width="25px" src="https://static.thenounproject.com/png/1471176-200.png" alt=""/>
+                        </div>
                         <div>
-                            <BookmarkBorderIcon/>
+                            <BookmarkBorderIcon style={{marginRight:"10px"}}/>
+                            <img width="25px" src="https://static.thenounproject.com/png/1471176-200.png" alt=""/>
                         </div>
                     </div>
                   
                     </div>
+                    <Divider/>
                     <div className={styles.story}>
                         <p>Story</p>
                         <hr/>
-                        <p>In India, the concept of education has been very sacred. But over the years, people lost their way and made it about obtaining credits and mechanising the minds. Starting with that thought, Sandeep Sinha, Co-founder and Managing Partner of Lumis Partners, put forward the question, “Where do you think education lost the script?</p>
-                        <div className={styles.details} >
-
-                        </div>
-                        <div className={styles.bank} >
-                             
-                        </div>
-                        <div className={styles.donate} ></div>
-                        <hr/>
-                        <Card/>
+                        <p className={styles.desc}>In India, the concept of education has been very sacred. But over the years, people lost their way and made it about obtaining credits and mechanising the minds. Starting with that thought, Sandeep Sinha, Co-founder and Managing Partner of Lumis Partners, put forward the question, “Where do you think education lost the script?</p>
+                       
                     </div>
                 </div>
-                <div className="">
-                    <div className={styles.raised} >
-                        <div></div>
-                        <p></p>
-                    </div>
-                    <div>
-                    <div className="progress">
-                        <div className="progress-bar bg-danger w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    <div className={styles.goal}>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className={styles.donate} ></div>
-                    <hr/>
-                    <Card/>
-                    <div>
-                      
-                        
-                    </div>
-                </div>
+               
             </div>
         
     </div>
