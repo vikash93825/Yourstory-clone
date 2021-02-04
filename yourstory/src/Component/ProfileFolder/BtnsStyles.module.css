@@ -1,0 +1,52 @@
+.fbBtn {
+  background-color: #393d80;
+  margin-top: 10px;
+  padding: 8px;
+  width: 100%;
+  color: white;
+  font-size: medium;
+  text-align: center;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+}
+.linkedInBtn {
+  background-color: #6445ad;
+  margin-top: 10px;
+  padding: 8px;
+  width: 100%;
+  color: white;
+  font-size: medium;
+  text-align: center;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+}
+
+.twitBtn {
+  background-color: #8d6dd6;
+  margin-top: 10px;
+  padding: 6px;
+  width: 100%;
+  color: white;
+  font-size: medium;
+  text-align: center;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+}
+
+.displayFlex {
+  display: flex;
+  justify-content: center;
+}
+
+.fbicon {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.fbData {
+  padding-top: 3px;
+  padding-left: 5px;
+}
