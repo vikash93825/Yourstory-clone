@@ -13,6 +13,7 @@ import Styles from "./Search.module.css";
 import SearchBar from "../../Component/SearchBar";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSourceData, fetchFilteredData } from "../../Redux/DataRedux/actionCreator";
+import { Link } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -146,6 +147,7 @@ const Search = () => {
             <Grid container justify="center" spacing={3}>
               {newsData && newsData.map((element) => (
                 <Grid key={element.start_id} item>
+                  
                   <StoryCard element={element}/>
                 </Grid>
               ))}

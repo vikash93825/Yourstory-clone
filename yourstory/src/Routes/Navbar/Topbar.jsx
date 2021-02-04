@@ -4,6 +4,7 @@ import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
 import SearchIcon from '@material-ui/icons/Search';
 import {Grid,Badge,IconButton,Toolbar,AppBar} from '@material-ui/core'
+import {Link} from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
 
@@ -68,7 +69,9 @@ export default function Topbar() {
             <Toolbar>
             <Grid container justify="center" alignItems="center">
                 <Grid item justifyContent="center">
-                    <img className={classes.logo} alt="Portal Logo" src="https://yourstory.com/logos/logo_yourstory.svg" align="center" />
+                    <Link to="/">
+                        <img className={classes.logo} alt="Portal Logo" src="https://yourstory.com/logos/logo_yourstory.svg" align="center" />
+                    </Link>
                 </Grid>
             </Grid>
             
@@ -92,7 +95,9 @@ export default function Topbar() {
                 onClick={handleProfileMenuOpen}
                 color="inherit"
                 >
-                <SearchIcon style={{color:"#bf360c"}}/>
+                <Link to="/search">
+                    <SearchIcon style={{color:"#bf360c"}}/>
+                </Link>
             </IconButton>
             </div>
             </Toolbar>

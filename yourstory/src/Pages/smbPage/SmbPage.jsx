@@ -6,7 +6,7 @@ import {fetchSourceData} from '../../Redux/DataRedux/actionCreator'
 import SideCard from './SideCard'
 import CardComponent from './CardComponent'
 import styles from './LandingPage.module.css'
-
+//import Carousel from 'react-elastic-carousel'
 
 import {
     Card,
@@ -19,7 +19,6 @@ import {
     Grid,
 } from "@material-ui/core";
 import BottomCard from './BottomCard';
-import YourstoryTv from '../YourstoryTv/YourstoryTv';
 
 const useStyles = makeStyles({
     root: {
@@ -38,7 +37,7 @@ const useStyles = makeStyles({
     },
 });
 
-const LandingPage = () => {
+const SmbPage = () => {
     const classes = useStyles();
     const dispatch = useDispatch()
     useEffect(() => {
@@ -99,11 +98,8 @@ const LandingPage = () => {
         <BottomCard/>
         <BottomCard/>
         <BottomCard/>
-
-        {/* <Carousal/> */}
-        
     </div>
     );
 }
 
-export default LandingPage;
+export default SmbPage;
