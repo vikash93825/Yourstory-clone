@@ -11,6 +11,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import styles from "./StoryCard.module.css";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
@@ -23,11 +24,17 @@ const useStyles = makeStyles({
 
 const StoryCard = (props) => {
   const classes = useStyles();
-  const {title,description,date,img_url} = props.element;
-  console.log(description)
-
+  const {start_id,title,description,date,img_url} = props.element;
+  // console.log(description)
+  // console.log(start_id)
+  const history = useHistory()
+  const handleCard =()=>{
+    history.push(
+      `/story/${start_id}`
+    )
+  }
   return (
-    <div className={styles.card}>
+    <div className={styles.card} onClick={handleCard}>
       <Card className={classes.root}>
         <CardActionArea>
           <CardMedia

@@ -7,8 +7,9 @@ import translate from './i18n/translate'
 
 function App() {
   return (
-    <I18nProvider locale={LOCALES.ENGLISH}>
+    <I18nProvider locale={LOCALES.GERMAN}>
     <div className="App">
+      {/* <FormattedMessage id="hello"/> */}
       {translate("hello")}
       <Routes/>
     </div>

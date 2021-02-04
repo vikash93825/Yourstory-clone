@@ -7,6 +7,8 @@ import ThumbAndBrand from "./FeaturedFolder/ThumbAndBrand"
 import UpdatedContentButton from "./FeaturedFolder/UpdatedContentButton"
 import Grid from "@material-ui/core/Grid"
 import Tags from "./FeaturedFolder/Tags"
+import { useDispatch } from "react-redux"
+import { postStory } from "../../Redux/DataRedux/actionCreator"
 
 
 const FeaturedPage  = (props) => {
@@ -17,7 +19,7 @@ const FeaturedPage  = (props) => {
     const [tag, setTag] = useState("")
     const [brand, setBrand] = useState("MyStory")
     const [tagDescription, setTagDescription] = useState("")
-   
+    const dispatch = useDispatch();
 
     const handleChnageTitle = (e) => {
         if(title.split("").length <= 1000){
@@ -60,7 +62,16 @@ const FeaturedPage  = (props) => {
     const handleUpdate = (e) => {
         e.preventDefault()
         console.log(title, subtitle, image, tag, brand);
+        let payload = {
+          title,
+          subtitle,
+          image,
+          tag,
+          brand
+        };
+          dispatch(postStory(payload))
     }
+    
     const handleReview = (e) => {
         e.preventDefault()
         console.log(title, subtitle, image, tag, brand);

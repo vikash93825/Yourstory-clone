@@ -1,7 +1,7 @@
 import { LOCALES } from '../locales'
 
 export default {
-    [LOCALES.ENGLISH]: {
+    [LOCALES.GERMAN]: {
         'hello': 'hallo'
     }
 }

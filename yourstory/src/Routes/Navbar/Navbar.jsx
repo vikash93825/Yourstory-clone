@@ -1,25 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { fade, makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import InputBase from '@material-ui/core/InputBase';
-import Badge from '@material-ui/core/Badge';
-import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
-import MenuIcon from '@material-ui/icons/Menu';
-import SearchIcon from '@material-ui/icons/Search';
+import {Select, Menu, MenuItem, Badge, Typography, IconButton, Toolbar, AppBar} from '@material-ui/core'
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import {Link} from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     hr:{
         border:"none",
         borderTop:"1px dotted #000000",
         marginBottom:40
+    },
+    link:{
+        textDecoration: "none",
+        color: "#000000",
     },
     pad:{
         marginTop: -20,
@@ -80,6 +76,10 @@ export default function Navbar() {
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+
+    const onEnter = (e) => { setIsOver(true); }
+    const onLeave = (e) => { setIsOver(false); }
+    const [isOver, setIsOver] = useState(false);
 
     const isMenuOpen = Boolean(anchorEl);
     const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -164,22 +164,22 @@ export default function Navbar() {
             <Toolbar className={classes.pad}>
             
             <Typography style={{color:"#212121"}} variant="h8" noWrap>
-                YourStory
+                <Link to="/" className={classes.link}>YourStory</Link>
             </Typography>
             <Typography variant="h8" style={{color:"#212121"}} noWrap>
             YourStory Club
             </Typography>
             <Typography variant="h8" style={{color:"#212121"}} noWrap>
-            YourStory TV
+            <Link to="/videos" className={classes.link}>YourStory TV</Link>
             </Typography>
             <Typography variant="h8" style={{color:"#212121"}} noWrap>
-            HerStory
+            <Link to="/herstory" className={classes.link}>HerStory</Link>
             </Typography>
             <Typography className={classes.title} variant="h8" style={{color:"#212121"}} noWrap>
-            SocialStory
+            <Link to="/socialstory" className={classes.link}>SocialStory</Link>
             </Typography>
             <Typography className={classes.title} variant="h8" style={{color:"#212121"}} noWrap>
-            SMBStory
+            <Link to="/smbstory" className={classes.link}>SMBStory</Link>
             </Typography>
             <Typography className={classes.title} variant="h8" style={{color:"#212121"}} noWrap>
             More
@@ -189,7 +189,25 @@ export default function Navbar() {
             <div className={classes.sectionDesktop}>
                 <IconButton aria-label="show 4 new mails" color="inherit">
                 <Badge style={{color:"#bf360c"}}>
-                    <MailIcon />
+                    <Select
+                        // labelId="demo-controlled-open-select-label"
+                        // id="demo-controlled-open-select"
+                        // open={open}
+                        // onClose={handleClose}
+                        // onOpen={handleOpen}
+                        // value={age}
+                        // onChange={handleChange}
+                        disabled={!isOver}
+                        onMouseEnter={onEnter}
+                        onMouseLeave={onLeave}
+                        >
+                        <MenuItem value="">
+                            <em>None</em>
+                        </MenuItem>
+                        <MenuItem value={10}>Ten</MenuItem>
+                        <MenuItem value={20}>Twenty</MenuItem>
+                        <MenuItem value={30}>Thirty</MenuItem>
+                    </Select>
                 </Badge>
                 </IconButton>
                 <IconButton
