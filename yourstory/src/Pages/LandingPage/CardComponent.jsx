@@ -29,20 +29,22 @@ const useStyles = makeStyles((theme) => ({
         },
     }));
 
-export default function CardComponent() {
+    
+
+export const CardComponent=({img_url}) =>{
     const classes = useStyles();
     return (
         <div className={classes.root}>
-            <Grid item xs={12}>
-                <Grid container justify="left" spacing={3} >
-                    {[0, 1, 2, 3].map((value) => (
+            {/* <Grid item container >
+                <Grid xs={12} md={6} lg={3}>
+                    {/* {[0, 1, 2, 3].map((value) => (
                         <Grid key={value} item>
-                        <Paper className={classes.paper}>
+                        <Paper className={classes.paper}> */}
                             <Card className={classes.root}>
                                 <CardActionArea>
                                 <CardMedia
                                     className={classes.media}
-                                    image="https://images.yourstory.com/cs/2/a9efa9c02dd911e9adc52d913c55075e/Imagepus1-1612014247506.jpg?fm=png&auto=format&ar=2:1&mode=crop&crop=faces"
+                                    image={img_url}
                                     title="Contemplative Reptile"
                                 />
                                 <CardContent>
@@ -60,11 +62,11 @@ export default function CardComponent() {
                                 </Button>
                                 </CardActions>
                             </Card>
-                        </Paper>
+                        {/* </Paper>
                         </Grid>
-                    ))}
-                    </Grid>
-                </Grid>
+                    ))} */}
+                    {/* </Grid>
+                </Grid> */}
         </div>
     );
 }

@@ -45,10 +45,10 @@ const LandingPage = () => {
     
     useEffect(() => {
         dispatch(fetchSourceData())
+        //dispatch(categoryParams())
     }, []);
 
-    const source = useSelector(state => state.source)
-    console.log(source)
+    
 
     return (
         <div>
@@ -95,14 +95,15 @@ const LandingPage = () => {
                 </Grid>
             </Grid>
         </Grid>
-
+        {/* {
+            category.map((item)=> <BottomCard {...item} /> )
+        } */}
+        <BottomCard/>
+        
+        {/* <BottomCard/>
         <BottomCard/>
         <BottomCard/>
-        <BottomCard/>
-        <BottomCard/>
-        <BottomCard/>
-
-        <Carousal/>
+        <BottomCard/> */}
         
     </div>
     );
