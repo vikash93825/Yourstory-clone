@@ -11,11 +11,13 @@ import FeaturedPage from '../Pages/CreatePost/FeaturedPage';
 import { Edit } from '../Component/Edit';
 import SmbPage from '../Pages/smbPage/SmbPage';
 import {YourStoryComp} from '../Pages/YourstoryTv/YourStoryComp';
+import { useTranslation } from 'react-i18next';
 
 const Routes = () => {
+    const { t, i18n } = useTranslation();
     return (
         <div>
-        
+             <p>{t('hello.1')}</p>
             <Route path="/" render={()=><Topbar/>}/>
             <Route path="/" render={()=><Navbar/>}/>
             <Switch>
