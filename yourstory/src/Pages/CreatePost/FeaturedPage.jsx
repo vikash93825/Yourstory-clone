@@ -5,8 +5,14 @@ import BrandElement from "./FeaturedFolder/BrandElement"
 import SubTitle from "./FeaturedFolder/SubTitle"
 import ThumbAndBrand from "./FeaturedFolder/ThumbAndBrand"
 import UpdatedContentButton from "./FeaturedFolder/UpdatedContentButton"
+import { Upload } from '../../CustomHooks/upload'
+
 import Grid from "@material-ui/core/Grid"
 import Tags from "./FeaturedFolder/Tags"
+import { useDispatch } from "react-redux"
+import { postStory } from "../../Redux/DataRedux/actionCreator"
+import { v4 as uuidv4 } from 'uuid';
+
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import parse from "html-react-parser"
@@ -19,6 +25,7 @@ const FeaturedPage  = (props) => {
     const [tag, setTag] = useState("")
     const [brand, setBrand] = useState("MyStory")
     const [tagDescription, setTagDescription] = useState("")
+    const dispatch = useDispatch();
     const [text, setText] = useState("")
     const [normalText, setNormalText] = useState("")
 
@@ -54,18 +61,20 @@ const FeaturedPage  = (props) => {
     }
 
     const handleImageChange  = (e) => {
-        if(e.target.files && e.target.files[0]){
-            let img = e.target.files[0]
-            setImage(URL.createObjectURL(img))
-        }
+            // e.map(e=>console.log(e))
+            console.log(e[0])
+            setImage(e[0])
     }
 
     const handleTag = (e)=> {
         setTag(e.target.value)
     }
+
     const handleTagDescription = (e) => {
         setTagDescription(e.target.value)
     }
+
+    // const photo = React.createRef()
 
     const handleUpdate = (e) => {
         e.preventDefault()
@@ -102,8 +111,9 @@ const FeaturedPage  = (props) => {
         };
           dispatch(postStory(payload))
         console.log(normalText);
-        console.log(title, subtitle, image, tag, brand, normalText.props.children);
+        console.log(title, subtitle, image, tag, brand);
     }
+    
     const handleReview = (e) => {
         e.preventDefault()
         console.log(title, subtitle, image, tag, brand);
@@ -119,7 +129,11 @@ const FeaturedPage  = (props) => {
         </Grid>
 
         <Grid xs = {12} md = {5}>
-          <ThumbAndBrand image = {image} handleImageChange = {handleImageChange} />
+          {/* <ThumbAndBrand image = {image} handleImageChange = {handleImageChange} /> */}
+          <Upload
+            onDrop={ files =>handleImageChange(files) }
+            />
+
           <BrandElement />
         </Grid> 
 
@@ -148,9 +162,7 @@ const FeaturedPage  = (props) => {
         <Grid >
           <UpdatedContentButton handleUpdate = {handleUpdate} handleReview = {handleReview} />
         </Grid>
-
       </Grid>
-
     </Grid> 
   )
 }

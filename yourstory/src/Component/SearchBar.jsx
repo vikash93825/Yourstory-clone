@@ -3,8 +3,11 @@ import { useDispatch } from 'react-redux'
 import { Button } from "@material-ui/core";
 import TextField from '@material-ui/core/TextField';
 import {filterBySearch} from "../Redux/DataRedux/actionCreator" 
+import { useTranslation } from 'react-i18next';
 
 function SearchBar(props) {
+  const { t, i18n } = useTranslation();
+
     const { newsData } = props;
     const [ filterData, setFilterData] = useState(newsData)
     const [ query, setQuery ] = useState('');
@@ -28,7 +31,7 @@ function SearchBar(props) {
         <div>        
         <TextField 
             id="outlined-search" 
-            label="Search field" 
+            label={t('SearchPage.Filter')} 
             type="search" 
             variant="outlined" 
             value={query}
@@ -38,7 +41,7 @@ function SearchBar(props) {
       </div>
       <div>
           <Button variant="contained" color="secondary" style={{background:"#ef4136",margin:"12px"}}>
-            List Your Companies
+          {t('SearchBar.CompaniesBtn')}
           </Button>
         </div>
   

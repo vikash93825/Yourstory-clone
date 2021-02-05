@@ -27,12 +27,9 @@ class Edit extends Component {
         <div style={{width:"50%"}}>
         <Editor
           editorState={editorState}
-          onEditorStateChange={this.onEditorStateChange}
-         
+          onEditorStateChange={this.onEditorStateChange} 
         />
         </div>
-     
-       
         <div>
         <textarea
           disabled

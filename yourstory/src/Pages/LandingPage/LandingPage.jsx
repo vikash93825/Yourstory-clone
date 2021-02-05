@@ -10,6 +10,8 @@ import BottomCard from './BottomCard';
 import HeadingContent from './HeadingContent';
 import { Card,CardActionArea,CardActions,CardContent,CardMedia,Button,Typography,Grid } from "@material-ui/core";
 
+import { useTranslation } from 'react-i18next';
+
 const useStyles = makeStyles({
     root: {
         maxWidth: 650,
@@ -44,6 +46,8 @@ const useStyles = makeStyles({
 });
 
 const LandingPage = () => {
+    const { t, i18n } = useTranslation();
+
     const classes = useStyles();
     const dispatch = useDispatch()
 
@@ -72,7 +76,7 @@ const LandingPage = () => {
                                 02/02/2021
                                 </Typography>
                                 <Typography variant="h6" style={{fontWeight:"bold"}} component="h1">
-                                Budget 2021 positions India towards its target of $5T economy: USISPF
+                                {t('landing.mainCard')}
                                 </Typography>
                             </CardContent>
                         </CardActionArea>
@@ -85,7 +89,7 @@ const LandingPage = () => {
                 </Grid>
                 <Grid item className={classes.pad2} >
                     <div style={{marginTop: "-10%", marginBottom:"-2%"}}>
-                        <HeadingContent head="Union Budget 2021" para="Featuring Budget 2021 Stories" />
+                        <HeadingContent head={`${t('landing.sideBar')}`} para={`${t('landing.sideBarSubheading')}`} />
                     </div>
                     {
                         unionBudget.map((item)=> <SideCard {...item} />)

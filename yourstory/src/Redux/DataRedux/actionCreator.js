@@ -6,7 +6,13 @@ import {
   FETCH_FILTERED_DATA_REQUEST,
   FETCH_FILTERED_DATA_SUCCESS,
   FETCH_FILTERED_DATA_FAILURE,
-  FILTERBYSEARCH
+  FILTERBYSEARCH,
+  FILTERBYLANGUAGEREQUEST,
+  FILTERBYLANGUAGESUCCESS,
+  FILTERBYLANGUAGEFAILURE,
+  POSTSTORY,
+  POSTSTORYSUCCESS,
+  POSTSTORYFAILURE
 } 
 from "./actionTypes";
 
@@ -64,6 +70,45 @@ export const filterBySearch = payload => {
   };
 };
 
+export const filterByLanguage = payload => {
+  console.log("FILTERBYLANGUAGE",payload);
+  return {
+    type: FILTERBYLANGUAGEREQUEST,
+    payload
+  };
+};
+
+export const filterByLanguageSuccess = payload => {
+  console.log("FILTERBYLANGUAGESUCCESS",payload);
+  return {
+    type: FILTERBYLANGUAGESUCCESS,
+    payload
+  };
+};
+
+export const filterByLanguageFailure = payload => {
+  console.log("FILTERBYLANGUAGEFAILURE",payload);
+  return {
+    type: FILTERBYLANGUAGEFAILURE,
+    payload
+  };
+};
+
+export const postStorySuccess = payload => {
+  console.log("POSTSTORYSUCCESS",payload);
+  // return {
+  //   type: POSTSTORYSUCCESS,
+  //   payload
+  // };
+};
+
+export const postStoryFailure = payload => {
+  console.log("POSTSTORYFAILURE",payload);
+  // return {
+  //   type: POSTSTORYFAILURE,
+  //   payload
+  // };
+};
 
 export const fetchSourceData = () => dispatch => {
   console.log('fetchSourceData');
@@ -125,3 +170,41 @@ export const fetchFilteredData = (params) => dispatch => {
             dispatch( fetchFilteredDataFailure( err) )
         })
   }
+
+
+export const fetchLanguageData = (lang) => dispatch => {
+    console.log('fetchLanguageData',lang);
+    if(lang === 'english'){
+      dispatch(fetchSourceData())
+      return 
+    }
+    dispatch(filterByLanguage());
+      let config = {
+          method: 'GET',
+          url: 'http://localhost:3002/sources/',
+          data: {
+              lang
+          },
+      }
+      return axios( config )
+      .then( res => {
+        console.log(res.data.map(item=>item[lang]));
+          dispatch( filterByLanguageSuccess( res.data.map(item=>item[lang])))
+      })
+      .catch( err => {
+              console.log( "fetch")
+              dispatch( filterByLanguageFailure( err) )
+          })
+}
+
+export const postStory = (payload) => dispatch => {
+  console.log(payload)
+  return axios({
+    method: 'POST',
+    url: 'http://localhost:3002/sources/',
+    data: payload
+  })
+  // .then(res => dispatch(postStorySuccess(res)))
+  // .catch(err => dispatch(postStoryFailure(err)))
+}
+
