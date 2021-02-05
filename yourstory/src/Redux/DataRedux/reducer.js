@@ -5,7 +5,13 @@ import {
     FETCH_FILTERED_DATA_REQUEST,
     FETCH_FILTERED_DATA_SUCCESS,
     FETCH_FILTERED_DATA_FAILURE,
-    FILTERBYSEARCH
+    FILTERBYSEARCH,
+    FILTERBYLANGUAGEREQUEST,
+    FILTERBYLANGUAGESUCCESS,
+    FILTERBYLANGUAGEFAILURE,
+    POSTSTORY,
+    POSTSTORYSUCCESS,
+    POSTSTORYFAILURE
   } 
   from "./actionTypes";
   
@@ -25,11 +31,13 @@ import {
         };
       case FETCH_SOURCE_SUCCESS:  
         return {
+          ...state,
           isLoading: false,
           source: payload,
         };
       case FETCH_SOURCE_FAILURE:
         return {
+          ...state,
           isLoading: false,
           error: payload
         };
@@ -40,19 +48,38 @@ import {
         };
       case FETCH_FILTERED_DATA_SUCCESS:  
         return {
+          ...state,
           isLoading: false,
           source: payload,
         };
       case FETCH_FILTERED_DATA_FAILURE:
         return {
+          ...state,
           isLoading: false,
           error: payload
         };
       case FILTERBYSEARCH:
         return {
+          ...state,
           source: payload
         }
-
+      case FILTERBYLANGUAGEREQUEST:
+        return {
+          ...state,
+          isLoading: true
+        }
+      case FILTERBYLANGUAGESUCCESS:
+        return {
+          ...state,
+          isLoading: false,
+          source: payload
+        }
+      case FILTERBYLANGUAGEFAILURE:
+        return {
+          ...state,
+          isLoading: false,
+          error: payload
+        }
       default:
         return state;
     }

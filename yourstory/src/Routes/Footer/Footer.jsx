@@ -1,30 +1,31 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import {Link, NavLink} from 'react-router-dom'
 import styles from './Footer.module.css';
 import Button from '@material-ui/core/Button';
+import { Grid, Hidden } from '@material-ui/core';
 
 const Footer = () => {
     return (
         <div className={styles.foot}>
             <hr/>
-            <div className="row"  >
-                <div className="col-lg-4 col-md-4 col-sm-6">
+            <Grid container>
+                <Grid xs={12} md={4} lg={4}>
                     <div className={styles.main}>
-                        <div style={{display:"flex",flexDirection:"column"}} >
+                        <div style={{display:"flex"}} >
                             <div>
-                                <img src="https://images.yourstory.com/assets/images/social_icons/twitter2x.png" width="30px" />
+                            <a href="https://www.twitter.com/"> <img src="https://images.yourstory.com/assets/images/social_icons/twitter2x.png" width="30px" /></a>
                             </div>
                             <div>
-                                <img src="https://images.yourstory.com/assets/images/social_icons/instagram2x.png" width="30px" />
+                            <a href="https://www.instagram.com/"><img src="https://images.yourstory.com/assets/images/social_icons/instagram2x.png" width="30px" /></a>
                             </div>
                             <div>
-                                <img src="https://images.yourstory.com/assets/images/social_icons/facebook2x.png" width="30px" />
+                                <a href="https://www.facebook.com/"><img src="https://images.yourstory.com/assets/images/social_icons/facebook2x.png" width="30px" /></a>
                             </div>
                             <div>
-                                <img src="https://images.yourstory.com/assets/images/social_icons/linkedin2x.png" width="30px" />
+                            <a href="https://www.linkedin.com/"><img src="https://images.yourstory.com/assets/images/social_icons/linkedin2x.png" width="30px" /></a>
                             </div>
                             <div>
-                                <img src="https://images.yourstory.com/assets/images/social_icons/youtube2x.png" width="30px" />
+                            <a href="https://www.youtube.com/"><img src="https://images.yourstory.com/assets/images/social_icons/youtube2x.png" width="30px" /></a>
                             </div>
                         </div>
                         <div>
@@ -34,15 +35,15 @@ const Footer = () => {
                         </div>
                         <div>
                         <Button variant="contained" style={{backgroundColor:"#f44336", borderRadius:"15px", width:"150px", color:"white"}}>
-                            Search
+                            <Link to="/search" style={{textDecoration:"none",color:"white"}}>Search</Link> 
                         </Button>
                         </div>
                     </div>
-                </div>
+                </Grid>
 
-                <div className="col-lg-2 col-md-4 col-sm-6"  >
+                <Grid xs={12} md={2} lg={2}>
                     <div className={styles.main}>
-                        <div className={styles.name} >Topics</div>
+                        <Hidden smDown><div className={styles.name} >Topics</div>
                         <div>
                             <Link>Startups</Link>
                         </div>
@@ -55,10 +56,12 @@ const Footer = () => {
                         <div>
                             <Link>Expert Opinion</Link>
                         </div>
+                        </Hidden>
                     </div>
-                </div>
+                    
+                </Grid>
 
-                <div className="col-lg-2 col-md-4 col-sm-6"  >
+                <Grid xs={12} md={2} lg={2}>
                     <div className={styles.main}>
                         <div>
                             <Link>App Friday</Link>
@@ -70,11 +73,11 @@ const Footer = () => {
                             <Link>Resources</Link>
                         </div>
                     </div>
-                </div>
+                </Grid>
 
-                <div className="col-lg-2 col-md-4 col-sm-6">
+                <Grid xs={12} md={2} lg={2}>
                     <div className={styles.main}>
-                        <div className={styles.name} >About</div>
+                        <Hidden smDown> <div className={styles.name} >About</div>
                         <div>
                             <Link>Advertise with us</Link>
                         </div>
@@ -87,10 +90,11 @@ const Footer = () => {
                         <div>
                             <Link>Events</Link>
                         </div>
+                        </Hidden>
                     </div>
-                </div>
+                </Grid>
 
-                <div className="col-lg-2 col-md-4 col-sm-6">
+                <Grid xs={12} md={2} lg={2}>
                     <div className={styles.main}>
                         
                         <div>
@@ -103,9 +107,9 @@ const Footer = () => {
                             <Link>Work with Us</Link>
                         </div>
                     </div>
-                </div>
+                </Grid>
 
-            </div>
+            </Grid>
         </div>
     );
 }

@@ -21,7 +21,7 @@ const Title = (props) => {
                 <textarea value = {title} className = {styles.titleTextArea} rows={6} onKeyUp = {handleKeyUpTitle} onChange = {handleChnageTitle} placeholder = "Title of the story" />
                 <div className = {styles.displayFlexSpaceBitween}>
                     <div className = {styles.colorRed}>* Title of the story must be provided</div>
-                    <div className = {styles.colorCyan}>{title && title.split("").length}/1000</div>
+                    <div className = {styles.colorCyan}>{title && typeof( title.split("").length) != "number" ? 0 : title.split("").length}/1000</div>
                 </div>
             </div>
     )

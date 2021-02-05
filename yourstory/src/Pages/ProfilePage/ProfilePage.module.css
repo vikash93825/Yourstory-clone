@@ -16,7 +16,7 @@
   height: 78px;
   margin-left: 85px;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: no-wrap;
   margin-bottom: 20px;
 }
 

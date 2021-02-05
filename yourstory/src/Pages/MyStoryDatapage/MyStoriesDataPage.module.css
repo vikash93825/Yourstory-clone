@@ -1,0 +1,101 @@
+.stepLabel {
+  width: max-content;
+  padding: 15px;
+  /* border-bottom: 5px solid rgb(221, 19, 19); */
+  margin: 0px;
+}
+
+.StepLabel :active {
+  border-bottom: 5px solid green;
+}
+.stepperHeadings :hover {
+  cursor: pointer;
+}
+
+.labelSpan {
+  font-size: "22px";
+  color: "black";
+  text-align: "center";
+}
+
+.title {
+  font-size: large;
+  font-weight: 500;
+}
+
+.colorCyan {
+  color: rgb(13, 235, 235);
+}
+
+.moreVertIcon {
+  border-radius: 4px;
+  padding: 1px;
+  color: black;
+  margin-top: 10px;
+  background-color: rgba(240, 242, 243, 0.849);
+}
+.moreVertIconDiv {
+  margin-left: 30px;
+}
+.moreVertIconDiv :hover {
+  background-color: cyan;
+  cursor: pointer;
+}
+
+.selectorStyles {
+  min-width: 250px;
+  padding: 8px;
+  border: 1px solid cyan;
+}
+
+.writeStoryModal {
+  padding: 9px;
+  color: rgb(196, 17, 17);
+  border-radius: 1px;
+  font-weight: 600;
+  outline: none;
+  border: 1px solid rgb(196, 17, 17);
+}
+
+.modelParentDiv :hover {
+  background-color: rgb(196, 17, 17);
+  color: white;
+  font-weight: 600;
+}
+
+.selectorOptionStyles {
+  padding: 5px;
+}
+
+.modalData {
+  font-weight: 600;
+  font-size: larger;
+}
+
+.paper {
+  background-color: whitesmoke;
+  border: 2px solid #000;
+  box-shadow: violet;
+  width: 200px;
+  text-align: center;
+  padding: 20px;
+  outline: none;
+}
+
+.paper :hover {
+  cursor: pointer;
+}
+
+.closeModelButton {
+  margin-left: 80%;
+  background: cyan;
+  border-radius: 50%;
+}
+
+.noStories {
+  font-size: x-large;
+  margin-top: 200px;
+  text-align: center;
+  color: cyan;
+  margin-bottom: 200px;
+}

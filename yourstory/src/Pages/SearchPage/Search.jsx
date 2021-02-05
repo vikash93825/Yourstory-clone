@@ -12,7 +12,11 @@ import { StoryCard } from "./StoryCard";
 import Styles from "./Search.module.css";
 import SearchBar from "../../Component/SearchBar";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchSourceData, fetchFilteredData } from "../../Redux/DataRedux/actionCreator";
+import { fetchSourceData, fetchFilteredData, fetchLanguageData } from "../../Redux/DataRedux/actionCreator";
+import { Link } from "react-router-dom";
+
+import { useTranslation } from 'react-i18next';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -24,12 +28,23 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Search = () => {
+  const { t, i18n } = useTranslation();
   const classes = useStyles();
-  const newsData = useSelector(state => state.source)
+  const newsData = useSelector(state => state.app.source)
   const dispatch = useDispatch()
   const [params, setParams] = React.useState([]);
+  let langData = []
+  // console.log(newsData)
 
-  console.log(newsData)
+  const handleLanguage = (lang) => {
+    dispatch(fetchLanguageData(lang))
+  }
+
+  console.log(newsData);
+
+    useEffect(()=>{
+      console.log(langData);
+    },[newsData])
 
   const handleClick = (e) => {
     console.log(e.target.name,e.target.checked)
@@ -59,6 +74,8 @@ const Search = () => {
     <div>
         <div className={Styles.search}>
         <SearchBar newsData={newsData}/>
+        <button onClick={()=>handleLanguage('french')}>French</button>
+        <button onClick={()=>handleLanguage('english')}>English</button>
         </div>
       
     
@@ -66,11 +83,11 @@ const Search = () => {
       <div style={{ width: "15%" ,margin:"10px"}}>
         <Hidden smDown implementation="css">
           <Typography variant="h4" component="h4">
-            Filter
+            {t('SearchPage.Filter')}
           </Typography>
           <Divider/>
           <Typography variant="p" component="p">
-            Brand
+          {t('SearchPage.Brand')}
           </Typography>
           <div style={{ marginTop: "15px" }}>
             <div style={{ marginTop: "5px" }}>
@@ -144,11 +161,19 @@ const Search = () => {
         <Grid container className={classes.root} spacing={2}>
           <Grid item xs={12}>
             <Grid container justify="center" spacing={3}>
-              {newsData && newsData.map((element) => (
-                <Grid key={element.start_id} item>
-                  <StoryCard element={element}/>
-                </Grid>
-              ))}
+              {
+                // langData ?
+                // langData && langData.map((element) => (
+                //   <Grid key={element.start_id} item>
+                //     <StoryCard element={element}/>
+                //   </Grid>
+                //   ))
+                // :
+                newsData && newsData.map((element) => (
+                  <Grid key={element.start_id} item>
+                    <StoryCard element={element}/>
+                  </Grid>
+                  ))}
             </Grid>
           </Grid>
         </Grid>

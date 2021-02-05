@@ -1,0 +1,39 @@
+{
+    "hello": {
+       "1": "hello"
+    },
+    "landing":{
+        "mainCard":"Budget 2021 positions India towards its target of $5T economy: USISPF",
+        "sideBar": "Union Budget 2021",
+        "sideBarSubheading": "Featuring Budget 2021 Stories"
+    },
+    "bottomCard": {
+        "Startup": "Startup",
+        "StartupSubHeading": "Deep-dive stories of changemakers and innovators from the startup ecosystem",
+        "UnionBudget": "Union Budget 2021",
+        "UnionBudgetSubHeading": "News, updates and analysis on India's Union Budget 2021",
+        "LatestStories": "Latest Stories",
+        "LatestStoriesSubHeading": "Latest published stories, interviews, and updates across YourStory properties",
+        "Interview": "Interview",
+        "InterviewSubHeading": "Conversations with entrepreneurs, leaders, influencers, and changemakers",
+        "ExpertOpinion": "Expert Opinion",
+        "ExpertOpinionSubHeading": "Analysis and opinion pieces by guest authors, contributors, experts"
+    },
+    "Navbar": {
+        "Yourstory": "Yourstory",
+        "YourstoryClub": "YourStory Club",
+        "YourstoryTv": "YourStory TV",
+        "HerStory": "Her Story",
+        "SocialStory": "Social Story",
+        "SmbStory": "SMBstory",
+        "More": "More"
+    },
+    "SearchPage": {
+        "Filter": "Filter",
+        "Brand": "Brand"
+    },
+    "SearchBar": {
+        "Placeholder": "Placeholder",
+        "CompaniesBtn": "List Your Companies"
+    }
+}

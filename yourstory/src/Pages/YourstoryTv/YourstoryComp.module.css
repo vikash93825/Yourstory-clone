@@ -1,0 +1,12 @@
+.main {
+    padding: 20px 100px 0 100px;
+}
+
+.money{
+    padding: 20px 100px 0 100px;
+    display: flex;
+}
+
+.money > * {
+    margin-left: 20px;
+}

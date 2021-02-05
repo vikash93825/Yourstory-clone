@@ -16,8 +16,9 @@
   padding: 10px;
   margin: 10px;
   margin-right: 1px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border-radius: 5px;
+  /* border-top-left-radius: 5px; */
+  /* border-bottom-left-radius: 5px; */
   background-color: rgb(170, 106, 230);
   color: white;
 }

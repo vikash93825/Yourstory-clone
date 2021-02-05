@@ -1,25 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { fade, makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import InputBase from '@material-ui/core/InputBase';
-import Badge from '@material-ui/core/Badge';
-import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
-import MenuIcon from '@material-ui/icons/Menu';
-import SearchIcon from '@material-ui/icons/Search';
+import {Select, Menu, MenuItem, Badge, Typography, IconButton, Toolbar, AppBar, Hidden} from '@material-ui/core'
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import {Link, useHistory} from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles((theme) => ({
     hr:{
         border:"none",
         borderTop:"1px dotted #000000",
         marginBottom:40
+    },
+    link:{
+        textDecoration: "none",
+        color: "#000000",
     },
     pad:{
         marginTop: -20,
@@ -77,9 +74,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Navbar() {
+    const { t, i18n } = useTranslation();
+
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+
+    const onEnter = (e) => { setIsOver(true); }
+    const onLeave = (e) => { setIsOver(false); }
+    const [isOver, setIsOver] = useState(false);
 
     const isMenuOpen = Boolean(anchorEl);
     const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -100,7 +103,10 @@ export default function Navbar() {
     const handleMobileMenuOpen = (event) => {
         setMobileMoreAnchorEl(event.currentTarget);
     };
-
+    const history = useHistory()
+    const handleProfile=()=>{
+       history.push("/profile")
+    }
     const menuId = 'primary-search-account-menu';
     const renderMenu = (
         <Menu
@@ -112,7 +118,7 @@ export default function Navbar() {
         open={isMenuOpen}
         onClose={handleMenuClose}
         >
-        <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+        <MenuItem onClick={handleMenuClose}><span onClick={handleProfile}>Profile</span></MenuItem>
         <MenuItem onClick={handleMenuClose}>My account</MenuItem>
         </Menu>
     );
@@ -164,32 +170,56 @@ export default function Navbar() {
             <Toolbar className={classes.pad}>
             
             <Typography style={{color:"#212121"}} variant="h8" noWrap>
-                YourStory
+                <Link to="/" className={classes.link}>{t('Navbar.Yourstory')}</Link>
             </Typography>
+
             <Typography variant="h8" style={{color:"#212121"}} noWrap>
-            YourStory Club
+            <Hidden smDown>{t('Navbar.YourstoryClub')}</Hidden>
             </Typography>
+
             <Typography variant="h8" style={{color:"#212121"}} noWrap>
-            YourStory TV
+            <Link to="/videos" className={classes.link}>{t('Navbar.YourstoryTv')}</Link>
             </Typography>
+
             <Typography variant="h8" style={{color:"#212121"}} noWrap>
-            HerStory
+            <Hidden smDown> <Link to="/herstory" className={classes.link}>{t('Navbar.HerStory')}</Link></Hidden>
             </Typography>
+
             <Typography className={classes.title} variant="h8" style={{color:"#212121"}} noWrap>
-            SocialStory
+            <Hidden smDown> <Link to="/socialstory" className={classes.link}>{t('Navbar.SocialStory')}</Link></Hidden>
             </Typography>
+
             <Typography className={classes.title} variant="h8" style={{color:"#212121"}} noWrap>
-            SMBStory
+            <Hidden smDown> <Link to="/smbstory" className={classes.link}>{t('Navbar.SmbStory')}</Link></Hidden>
             </Typography>
+
             <Typography className={classes.title} variant="h8" style={{color:"#212121"}} noWrap>
-            More
+            <Hidden smDown>{t('Navbar.More')}</Hidden>
             </Typography>
             
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
                 <IconButton aria-label="show 4 new mails" color="inherit">
                 <Badge style={{color:"#bf360c"}}>
-                    <MailIcon />
+                    <Select
+                        // labelId="demo-controlled-open-select-label"
+                        // id="demo-controlled-open-select"
+                        // open={open}
+                        // onClose={handleClose}
+                        // onOpen={handleOpen}
+                        // value={age}
+                        // onChange={handleChange}
+                        disabled={!isOver}
+                        onMouseEnter={onEnter}
+                        onMouseLeave={onLeave}
+                        >
+                        <MenuItem value="">
+                            <em>None</em>
+                        </MenuItem>
+                        <MenuItem value={10}>Ten</MenuItem>
+                        <MenuItem value={20}>Twenty</MenuItem>
+                        <MenuItem value={30}>Thirty</MenuItem>
+                    </Select>
                 </Badge>
                 </IconButton>
                 <IconButton
