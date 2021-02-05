@@ -8,7 +8,8 @@ const UpdatedContentButton = (props) => {
         <>
             <div className ={styles.paddingLeft}>
                 <button type="submit" onClick = {handleUpdate}  className = {styles.updateBtn} >Update Contents</button>
-                <button type="submit" onClick = {handleReview} className = {styles.reviewBtn} >Send to Review</button><button className = {styles.upArrowBtn}><ArrowDropUpIcon fontSize = "inherit" /></button>
+                <button type="submit" onClick = {handleReview} className = {styles.reviewBtn} >Send to Review</button>
+                {/* <button className = {styles.upArrowBtn}><ArrowDropUpIcon fontSize = "inherit" /></button> */}
             </div>
         </>
     )

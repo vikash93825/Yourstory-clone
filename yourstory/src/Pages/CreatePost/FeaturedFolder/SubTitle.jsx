@@ -21,7 +21,7 @@ const SubTitle = (props) => {
                 <textarea value = {subtitle} className = {styles.subTitleTextArea} onKeyUp = {handleKeyUpSubTitle} rows={6} onChange = {handleChnageSubTitle} placeholder = "Sub Title of the story" />
                 <div className = {styles.displayFlexSpaceBitween}>
                     <div></div>
-                    <div className = {styles.colorCyan}>{subtitle && subtitle.split("").length}/300</div>
+                    <div className = {styles.colorCyan}>{subtitle && typeof( subtitle.split("").length) != "number" ? 0 : subtitle.split("").length}/300</div>
                 </div>
             </div>
     )

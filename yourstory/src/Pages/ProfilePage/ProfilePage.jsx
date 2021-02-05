@@ -5,15 +5,11 @@ import CreateIcon from '@material-ui/icons/Create';
 import PermContactCalendarIcon from '@material-ui/icons/PermContactCalendar';
 import BookmarkIcon from '@material-ui/icons/Bookmark';
 import Paper from '@material-ui/core/Paper';
-import FacebookBtn from "../../Component/ProfileFolder/FacebookBtn"
-import LinkedInBtn from "../../Component/ProfileFolder/LinkedInBtn"
-import TwitterBtn from "../../Component/ProfileFolder/TwitterBtn"
-import ProfileFooter from "../../Component/ProfileFolder/ProfileFooter"
-import { useHistory } from "react-router-dom";
-import Avatar from "@material-ui/core/Avatar"
-import { useDispatch } from "react-redux";
-import { loginOut } from "../../Redux/AuthRedux/actionCreators";
-
+import Button from "@material-ui/core/Button"
+import FacebookBtn from "./ProfileFolder/FacebookBtn";
+import LinkedInBtn from "./ProfileFolder/LinkedInBtn"
+import TwitterBtn from "./ProfileFolder/TwitterBtn"
+import ProfileFooter from "./ProfileFolder/ProfileFooter"
 const ProfilePage = () => {
     const cardData = [
         {
@@ -32,36 +28,28 @@ const ProfilePage = () => {
             "cardLink":"GO TO"
         }
     ]
-    const history = useHistory()
+
     const handleEditProfile = () => {
         console.log();
-       
     }
 
     const handleGoToWriteStoryPage = () => {
         console.log();
-        history.push("/postStory")
     }
 
     const handleGotoEditPage = () => {
         console.log();
-        history.push("/bio")
     }
- 
     const handleGoToBookMarksPage = () => {
-        history.push("/bookmark")
+        console.log();
     }
     const handlePassword = () => {
         console.log()
     }
-    const dispatch = useDispatch()
     const handleLogOut = () => {
         console.log();
-        dispatch(loginOut());
-        history.push("/login");
     }
-    const userLoginData = JSON.parse(localStorage.getItem("loginData"))
-    console.log(userLoginData)
+
     return (
         <>
             <Grid xs = {12}>
@@ -71,20 +59,20 @@ const ProfilePage = () => {
                 <div className = {styles.upperBackground}>
                     <Grid className ={styles.userDataDiv}>
                         <Grid xs = {1}>
-                        <Avatar  src={userLoginData.avatar_img} alt={userLoginData.username} />
+                            <img className = {styles.userImg} src="https://images.yourstory.com/cs/users/d02a52a0-4b7a-11eb-b2f0-b1bf6c34fbf6/profile_image_1609427641586.jpg" alt = "user image" />
                         </Grid>
                         <Grid className = {styles.table} xs = {3}>
                             <table>
                                 <tbody>
-                                    <tr><td className = {styles.name}>{userLoginData.username}</td></tr>
-                                    <tr><td className = {styles.email}>{userLoginData.email}</td></tr>
+                                    <tr><td className = {styles.name}>Chandra Mouli</td></tr>
+                                    <tr><td className = {styles.email}>mouliofficial98@gmail.com</td></tr>
                                     <tr><td className = {styles.editProfile} onClick = {handleEditProfile}>edit profile</td></tr>
                                 </tbody>
                             </table>
                         </Grid>
                     </Grid>
                     <Grid className = {styles.welcomeTag} xs = {12}>
-                        Welcome {userLoginData.username}
+                        Welcome Chandra Mouli
                     </Grid>
                     <Grid className = {styles.editCardsHeader} xs = {12}>
                         Control, customize, and secure your account, all in one place
@@ -164,11 +152,11 @@ const ProfilePage = () => {
                         <Grid xs = {10} md = {4}>
                             <div className = {styles.displayFlexaddingLeft50}>
                                 <div className = {styles.usersocialLeftSection} >
-                                    <p className = {styles.userNameHeader}>{userLoginData.username}</p>
+                                    <p className = {styles.userNameHeader}>Chandra Mouli</p>
                                     <p className = {styles.editProfile}>(disconect)</p>
                                 </div>
                                 <div>
-                                <Avatar className = {styles.userImgSocial} src={userLoginData.username} alt = {userLoginData.username} />
+                                <img className = {styles.userImgSocial} src="https://images.yourstory.com/cs/users/d02a52a0-4b7a-11eb-b2f0-b1bf6c34fbf6/profile_image_1609427641586.jpg" alt = "user image" />
                                 </div>
                             </div>
                         </Grid>
@@ -250,4 +238,4 @@ const ProfilePage = () => {
     )
 }
 
-export  {ProfilePage}
+export default ProfilePage
