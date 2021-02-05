@@ -6,11 +6,16 @@ import PermContactCalendarIcon from '@material-ui/icons/PermContactCalendar';
 import BookmarkIcon from '@material-ui/icons/Bookmark';
 import Paper from '@material-ui/core/Paper';
 import Button from "@material-ui/core/Button"
-import FacebookBtn from "./ProfileFolder/FacebookBtn";
-import LinkedInBtn from "./ProfileFolder/LinkedInBtn"
-import TwitterBtn from "./ProfileFolder/TwitterBtn"
-import ProfileFooter from "./ProfileFolder/ProfileFooter"
+import {FacebookBtn} from "../../Component/ProfileFolder/FacebookBtn";
+import {LinkedInBtn} from "../../Component/ProfileFolder/LinkedInBtn"
+import {TwitterBtn} from "../../Component/ProfileFolder/TwitterBtn"
+import {ProfileFooter} from "../../Component/ProfileFolder/ProfileFooter"
+import { useHistory } from 'react-router-dom';
+
 const ProfilePage = () => {
+
+    const history = useHistory();
+
     const cardData = [
         {
             "cardHeader":"Write your story",
@@ -35,6 +40,7 @@ const ProfilePage = () => {
 
     const handleGoToWriteStoryPage = () => {
         console.log();
+        history.push('/mystorydatapage')
     }
 
     const handleGotoEditPage = () => {
@@ -238,4 +244,4 @@ const ProfilePage = () => {
     )
 }
 
-export default ProfilePage
+export {ProfilePage}

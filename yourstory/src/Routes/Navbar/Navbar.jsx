@@ -102,6 +102,10 @@ export default function Navbar() {
         handleMobileMenuClose();
     };
 
+    const handleRegister = () => {
+        history.push('/signup')
+    }
+
     const handleMobileMenuOpen = (event) => {
         setMobileMoreAnchorEl(event.currentTarget);
     };
@@ -121,7 +125,7 @@ export default function Navbar() {
         onClose={handleMenuClose}
         >
         <MenuItem onClick={handleMenuClose}><span onClick={handleProfile}>Profile</span></MenuItem>
-        <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+        <MenuItem onClick={handleMenuClose}><span onClick={handleRegister}>My account</span></MenuItem>
         </Menu>
     );
 

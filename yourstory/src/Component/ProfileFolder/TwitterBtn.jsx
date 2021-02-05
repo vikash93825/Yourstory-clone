@@ -17,4 +17,4 @@ const TwitterBtn = () => {
         </>
     )
 }
-export default TwitterBtn
+export {TwitterBtn}

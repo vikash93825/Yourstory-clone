@@ -15,6 +15,7 @@ import { ProfilePage } from '../Pages/ProfilePage/ProfilePage';
 import { Login } from '../Pages/Login/Login';
 import { Register } from '../Pages/Register/Register';
 import { Bookmark } from '../Pages/Bookmark/Bookmark';
+import { MyStoriesDataPage } from '../Pages/MyStoryDatapage/MyStoriesDataPage';
 
 
 const Routes = () => {
@@ -28,6 +29,7 @@ const Routes = () => {
                 <Route path="/story" render={()=><Story/>}/> 
                 <Route path="/poststory" render={()=><FeaturedPage/>}/>
                 <Route path="/story" render={()=><Story/>}/> 
+                <Route path="/mystorydatapage" render={() => <MyStoriesDataPage/>}/>
                 <Route path="/editor" render ={()=><Edit/>}/>
                 <Route path="/smbstory" render={()=> <SmbPage/>} />
                 <Route path="/videos" render={()=> <YourStoryComp/>} /> 

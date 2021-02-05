@@ -16,4 +16,4 @@ const FacebookBtn = () => {
         </>
     )
 }
-export default FacebookBtn
+export {FacebookBtn}

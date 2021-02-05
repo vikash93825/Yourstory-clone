@@ -25,4 +25,4 @@ const ProfileFooter = ()=> {
     )
 }
 
-export default ProfileFooter
+export {ProfileFooter}

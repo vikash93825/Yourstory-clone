@@ -16,4 +16,4 @@ const LinkedInBtn = () => {
         </>
     )
 }
-export default LinkedInBtn
+export {LinkedInBtn}

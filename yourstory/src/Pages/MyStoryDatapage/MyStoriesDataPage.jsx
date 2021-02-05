@@ -10,6 +10,7 @@ import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import Divider from '@material-ui/core/Divider';
 import ClearIcon from '@material-ui/icons/Clear';
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -82,6 +83,8 @@ function getStepContent(stepIndex) {
 }
 
 const MyStoriesDataPage = () => {
+  const history = useHistory();
+
   const classes = useStyles();
   const [activeStep, setActiveStep] = useState(0);
   const [data, setData] = useState(allData)
@@ -103,8 +106,8 @@ const MyStoriesDataPage = () => {
 
 
   const handleToGoCreatePostPage = () => {
-      console.log("we need to navigate to create post page");
-    // using  history.push("")
+      // console.log("we need to navigate to create post page");
+     history.push("/poststory")
   }
 
   const handleStoriesRequestData = (payload) => {
@@ -200,4 +203,4 @@ const MyStoriesDataPage = () => {
   );
 }
 
-export default MyStoriesDataPage
+export {MyStoriesDataPage}
