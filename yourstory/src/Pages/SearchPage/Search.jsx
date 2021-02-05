@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Search = () => {
   const classes = useStyles();
-  const newsData = useSelector(state => state.source)
+  const newsData = useSelector(state => state.app.source)
   const dispatch = useDispatch()
   const [params, setParams] = React.useState([]);
 

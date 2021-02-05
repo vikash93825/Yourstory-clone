@@ -52,7 +52,7 @@ const LandingPage = () => {
     }, []);
 
     //getting source data from database
-    const source = useSelector(state => state.source)
+    const source = useSelector(state => state.app.source)
     const unionBudget = source.filter((item)=> item.category == "unionBudget")
 
     return (

@@ -10,7 +10,7 @@ const Story = () =>{
 
     const params = useParams()
     const {startId} = params
-    const data = useSelector(state=>state.source)
+    const data = useSelector(state=>state.app.source)
     console.log(startId,data)
     const storyData = data.find((item)=>item.start_id===startId)
     console.log(storyData)
