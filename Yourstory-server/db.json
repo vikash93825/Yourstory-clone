@@ -35,7 +35,8 @@
       "id": 1,
       "user_id": 1
     },
-    { "start_id":"ghcvdfdfdddgshgscvsg",
+    {
+      "start_id": "ghcvdfdfdddgshgscvsg",
       "title": "Empower india",
       "description": "This agritech interview aims to empower India’s 126M small farmers with technology and data",
       "img_url": "https://images.yourstory.com/cs/2/b3bfb136ab5e11e88691f70342131e20/Rishioffgrid-1612340112582.jpg?fm=png&auto=format&ar=2:1&mode=crop&crop=faces",
@@ -50,8 +51,8 @@
       "id": 2,
       "user_id": 1
     },
-    {  
-      "start_id":"ghcdcsdcsdvdgshgscvsg",
+    {
+      "start_id": "ghcdcsdcsdvdgshgscvsg",
       "title": "Empower india",
       "description": "This agritech interview aims to empower India’s 126M small farmers with technology and data",
       "img_url": "https://images.yourstory.com/cs/2/70651a302d6d11e9aa979329348d4c3e/WhatsAppImage2021-01-15at8-1612273288914.jpg?fm=png&auto=format&ar=2:1&mode=crop&crop=faces",
@@ -63,12 +64,25 @@
       "country": "us",
       "date": "21/12/2020",
       "like": 23,
-
+      "user_id": 1
     }
   ],
   "bookmark": [
     {
-      "id": 1
+      "start_id": "chdddchd",
+      "title": "This agritech interview aims to empower India’s 126M small farmers with technology and data",
+      "description": "This agritech interview aims to empower India’s 126M small farmers with technology and data",
+      "img_url": "https://images.yourstory.com/cs/2/a9efa9c02dd911e9adc52d913c55075e/Innovative-Business-1605700787694.png?fm=png&auto=format&ar=2:1&mode=crop&crop=faces",
+      "category": "Startup",
+      "authors": "yourstory",
+      "tag": "education",
+      "brand": "yourstory",
+      "language": "en",
+      "country": "us",
+      "date": "21/12/2020",
+      "like": 23,
+      "id": 1,
+      "user_id": 1
     }
   ]
 }

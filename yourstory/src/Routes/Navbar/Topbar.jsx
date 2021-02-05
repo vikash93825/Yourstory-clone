@@ -79,7 +79,7 @@ export default function Topbar() {
             <div className={classes.sectionDesktop}>
             <IconButton aria-label="show 4 new mails" className={classes.title} color="inherit">
                 <Badge  style={{color:"#bf360c"}}>
-                    <BookmarkBorderIcon/>
+                   <Link  to="/bookmark"> <BookmarkBorderIcon/></Link>
                 </Badge>
             </IconButton>
             <IconButton aria-label="show 4 new mails" className={classes.title} color="inherit">

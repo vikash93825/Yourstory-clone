@@ -11,7 +11,13 @@ import {
     FILTERBYLANGUAGEFAILURE,
     POSTSTORY,
     POSTSTORYSUCCESS,
-    POSTSTORYFAILURE
+    POSTSTORYFAILURE,
+    BOOKMARK_REQUEST,
+    BOOKMARK_SUCCESS,
+    BOOKMARK_FAILURE,
+    GET_BOOKMARK_FAILURE,
+    GET_BOOKMARK_REQUEST,
+    GET_BOOKMARK_SUCCESS
   } 
   from "./actionTypes";
   
@@ -19,7 +25,8 @@ import {
     isLoading: false,
     query: "",
     source: [],
-    error: ""
+    error: "",
+    bookmarkData:[]
   };
   
   const reducer = (state = initStore, {type,payload}) => {
@@ -80,6 +87,32 @@ import {
           isLoading: false,
           error: payload
         }
+      case BOOKMARK_REQUEST:
+        return{
+          ...state,
+        }
+        case BOOKMARK_SUCCESS:
+        return{
+          ...state,
+        }
+        case BOOKMARK_FAILURE:
+          return{
+            ...state,
+          }
+
+          case GET_BOOKMARK_REQUEST:
+            return{
+              ...state,
+            }
+            case GET_BOOKMARK_SUCCESS:
+            return{
+              ...state,
+              bookmarkData:payload
+            }
+            case GET_BOOKMARK_REQUEST:
+              return{
+                ...state,
+              }
       default:
         return state;
     }
