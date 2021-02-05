@@ -83,7 +83,8 @@ const FeaturedPage  = (props) => {
         let payload = {
             start_id: uuidv4(),
             title:title,
-            descrition: "",
+            subtitle: subtitle,
+            descrition: text,
             img_url: image,
             tag: "dshaklf",
             brand,
@@ -97,7 +98,8 @@ const FeaturedPage  = (props) => {
             french: {
                     start_id: uuidv4(),
                     title:title,
-                    descrition: "",
+                    subtitle: subtitle,
+                    descrition: text,
                     img_url: image,
                     tag: "dfadfad",
                     brand,
@@ -108,12 +110,28 @@ const FeaturedPage  = (props) => {
                     country: "us",
                     like: 6,
                     user_id: 2,
-            }
+            },
+            german: {
+                    start_id: uuidv4(),
+                    title:title,
+                    subtitle: subtitle,
+                    descrition: text,
+                    img_url: image,
+                    tag: "dfadfad",
+                    brand,
+                    date: new Date().toLocaleDateString(),
+                    language: "fr",
+                    authors: 'yourstory',
+                    category: 'education',
+                    country: "us",
+                    like: 6,
+                    user_id: 2,
+      }
         };
           dispatch(postStory(payload))
         console.log(payload);
-        console.log(title, subtitle, image, tag, brand);
-        history.push('/search')
+        console.log(title, subtitle);
+        // history.push('/search')
     }
 
     
