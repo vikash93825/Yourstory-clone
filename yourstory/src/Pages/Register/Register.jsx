@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import {
   Typography,
   Container,
@@ -9,9 +9,10 @@ import {
   Grid
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { Link, useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import {v4 as uuid} from "uuid"
+import { loginData, registerData } from "../../Redux/AuthRedux/actionCreators";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -39,39 +40,53 @@ const Register = () => {
   const classes = useStyles();
   const [email,setEmail] = useState("")
   const [password,setPassword] = useState("")
+  const [username,setUsername] = useState("")
+  const [checkmail,setMail] = useState(false)
+  const usersData = useSelector(state=>state.auth.userData)
   const  dispatch =useDispatch()
+  useEffect(()=>{
+    dispatch(loginData())
+  },[])
+     
+        
+ 
+  console.log(usersData)
+    //Change length-1 to length
+  
+  const history = useHistory()
   const handleRegister = (e) => {
     e.preventDefault()
     console.log(email,password)
-
-    // let { addUserData ,checkEmail} = this.context;
-    // let out = checkEmail(email)   //check email already exists or not if exists redirects to login page
-    // console.log(out,"in re");
-    // this.setState({
-    //     checkmail:out
-    // })
-
-    
-    // if(!out)  //if email doesn't exists go inside if and push data
-    // {
+    for(let i = 0; i < usersData.length; i++)
+    {
         
-    //     let user_id = uuid();
-    //     let payload = {
-    //         user_id,
-    //         email,
-    //         username,
-    //         password,
-    //         avatar_img: "",
-    //         bio:""
-    //     };
+        if(email === usersData[i].email)
+        {
+            setMail(true);
+        }
+        else
+        {
+            continue;
+        }
+    }
 
-    //     addUserData(payload); // adding registred user data to our database
-    //     console.log(checkmail,"W");
-    //     let {history} = this.props;
-    //     history.push("/")
+    if(!checkmail)  //if email doesn't exists go inside if and push data
+    {
         
+        let user_id = uuid();
+        let payload = {
+            id:user_id,
+            email,
+            username,
+            password,
+            avatar_img: "",
+            bio:""
+        };
 
-    // }
+        dispatch(registerData(payload)); // adding registred user data to our database
+        console.log(checkmail,"W");
+        history.push("/")
+    }
    
   }
 
@@ -84,6 +99,19 @@ const Register = () => {
         </Typography>
         <form className={classes.form} noValidate onSubmit={handleRegister}>
           <Grid container spacing={2}>
+          <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                id="name"
+                label="Username"
+                name="username"
+                autoComplete="username"
+                value={username}
+                onChange={e=>setUsername(e.target.value)}
+              />
+            </Grid>
             <Grid item xs={12}>
               <TextField
                 variant="outlined"

@@ -6,6 +6,7 @@ import {
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
   LOGIN_FAILURE,
+  LOG_OUT
 } from "./actionTypes";
 
 export const registerRequest = (payload)=>({
@@ -32,7 +33,42 @@ export const registerData = (payload)=>(dispatch)=>{
         data:payload
     })
     .then((res)=>{
-        dispatch(registerSuccess({message:"successfully created"}))
+       return dispatch(registerSuccess({message:"successfully created"}))
     })
     .catch(err=>dispatch(registerFailure({message:"something wrong"})))
+}
+
+//login
+export const loginRequest = (payload)=>({
+    type:LOGIN_REQUEST,
+    payload
+})
+
+export const loginSuccess = (payload)=>({
+    type:LOGIN_SUCCESS,
+    payload
+})
+
+export const loginFailure = (payload)=>({
+    type:LOGIN_FAILURE,
+    payload
+})
+
+export const loginOut = (payload) => ({
+    type: LOG_OUT,
+    payload,
+  });
+
+export const loginData = (payload)=>(dispatch)=>{
+    console.log(payload)
+    dispatch(loginRequest())
+    axios({
+        method:"get",
+        url:"http://localhost:3002/user",
+    })
+    .then((res)=>{
+        console.log(res.data)
+        return dispatch(loginSuccess(res.data))
+    })
+    .catch(err=>dispatch(loginFailure({message:"something wrong"})))
 }

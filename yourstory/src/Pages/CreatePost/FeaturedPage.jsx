@@ -18,7 +18,7 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import parse from "html-react-parser"
 
 const FeaturedPage  = (props) => {
-
+    
     const [title, setTitle] = useState("")
     const [subtitle, setSubTitle] = useState("")
     const [image,setImage] = useState(null)
@@ -78,13 +78,13 @@ const FeaturedPage  = (props) => {
 
     const handleUpdate = (e) => {
         e.preventDefault()
-        console.log(title, subtitle, image, tag, brand);
+        // console.log(title, subtitle, image, tag, brand);
         let payload = {
             start_id: uuidv4(),
             title:title,
             descrition: "",
             img_url: image,
-            tag: tag,
+            tag: "dshaklf",
             brand,
             date: new Date().toLocaleDateString(),
             language: "en",
@@ -98,7 +98,7 @@ const FeaturedPage  = (props) => {
                     title:title,
                     descrition: "",
                     img_url: image,
-                    tag: tag,
+                    tag: "dfadfad",
                     brand,
                     date: new Date().toLocaleDateString(),
                     language: "fr",

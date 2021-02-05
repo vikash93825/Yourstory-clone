@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Card,CardActionArea,CardActions,CardContent,CardMedia,Button,Typography } from "@material-ui/core";
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -19,10 +20,14 @@ const useStyles = makeStyles((theme) => ({
         },
     }));
 
-export const CardComponent=({img_url, description, category}) =>{
+export const CardComponent=({start_id,img_url, description, category}) =>{
     const classes = useStyles();
+    const history = useHistory()
+    const handleClick=()=>{
+        history.push(`/story/${start_id}`)
+    }
     return (
-        <div className={classes.root}>
+        <div className={classes.root} onClick={handleClick}>
             <Card className={classes.root}>
                 <CardActionArea>
                     <CardMedia

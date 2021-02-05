@@ -29,7 +29,7 @@ const Routes = () => {
                 <Route path="/search" exact render={()=><Search/>}/>
                 <Route path="/story" render={()=><Story/>}/> 
                 <Route path="/poststory" render={()=><FeaturedPage/>}/>
-                <Route path="/story/:startId" component={Story}/> 
+                <Route path="/story/:startId" render={()=><Story/>}/> 
                 <Route path="/editor" render ={()=><Edit/>}/>
                 <Route path="/smbstory" render={()=> <SmbPage/>} />
                 <Route path="/videos" render={()=> <YourStoryComp/>} /> 
