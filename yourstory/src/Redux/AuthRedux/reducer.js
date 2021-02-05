@@ -15,7 +15,6 @@ import {
       message:"",
       userData:[]
   }
-
   export const authReducer =(state=initState,{type,payload})=>{
       switch(type){
           case SIGNUP_REQUEST:

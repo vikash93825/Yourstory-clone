@@ -6,6 +6,7 @@ import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import {Link, useHistory} from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles((theme) => ({
     hr:{
@@ -73,6 +74,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Navbar() {
+    const { t, i18n } = useTranslation();
+
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -167,31 +170,31 @@ export default function Navbar() {
             <Toolbar className={classes.pad}>
             
             <Typography style={{color:"#212121"}} variant="h8" noWrap>
-                <Link to="/" className={classes.link}>YourStory</Link>
+                <Link to="/" className={classes.link}>{t('Navbar.Yourstory')}</Link>
             </Typography>
 
             <Typography variant="h8" style={{color:"#212121"}} noWrap>
-            <Hidden smDown>  YourStory Club</Hidden>
+            <Hidden smDown>{t('Navbar.YourstoryClub')}</Hidden>
             </Typography>
 
             <Typography variant="h8" style={{color:"#212121"}} noWrap>
-            <Link to="/videos" className={classes.link}>YourStory TV</Link>
+            <Link to="/videos" className={classes.link}>{t('Navbar.YourstoryTv')}</Link>
             </Typography>
 
             <Typography variant="h8" style={{color:"#212121"}} noWrap>
-            <Hidden smDown> <Link to="/herstory" className={classes.link}>HerStory</Link></Hidden>
+            <Hidden smDown> <Link to="/herstory" className={classes.link}>{t('Navbar.HerStory')}</Link></Hidden>
             </Typography>
 
             <Typography className={classes.title} variant="h8" style={{color:"#212121"}} noWrap>
-            <Hidden smDown> <Link to="/socialstory" className={classes.link}>SocialStory</Link></Hidden>
+            <Hidden smDown> <Link to="/socialstory" className={classes.link}>{t('Navbar.SocialStory')}</Link></Hidden>
             </Typography>
 
             <Typography className={classes.title} variant="h8" style={{color:"#212121"}} noWrap>
-            <Hidden smDown> <Link to="/smbstory" className={classes.link}>SMBStory</Link></Hidden>
+            <Hidden smDown> <Link to="/smbstory" className={classes.link}>{t('Navbar.SmbStory')}</Link></Hidden>
             </Typography>
 
             <Typography className={classes.title} variant="h8" style={{color:"#212121"}} noWrap>
-            <Hidden smDown> More</Hidden>
+            <Hidden smDown>{t('Navbar.More')}</Hidden>
             </Typography>
             
             <div className={classes.grow} />

@@ -5,6 +5,7 @@ import {fetchSourceData} from '../../Redux/DataRedux/actionCreator'
 import Carousel from "react-elastic-carousel";
 import Item from "./Item";
 import HeadingContent from './HeadingContent';
+import { useTranslation } from 'react-i18next';
 
 const breakPoints = [
     { width: 1, itemsToShow: 1 },
@@ -14,6 +15,8 @@ const breakPoints = [
 ];
 
 export const BottomCard=()=> {
+    const { t, i18n } = useTranslation();
+
     const dispatch = useDispatch()
     
     //loading the source data so that different data can be shown using filter
@@ -41,7 +44,7 @@ export const BottomCard=()=> {
     return (
         <div>
             {/* showing the startup data by mapping in the carousal */}
-            <HeadingContent head="Startup" para="Deep-dive stories of changemakers and innovators from the startup ecosystem" />
+            <HeadingContent head={`${t('bottomCard.Startup')}`} para={`${t('bottomCard.StartupSubHeading')}`} />
             <div>
                 <Carousel breakPoints={breakPoints}>
                 {
@@ -55,7 +58,7 @@ export const BottomCard=()=> {
             </div>
 
             {/* showing the unionBudget data by mapping in the carousal */}
-            <HeadingContent head="Union Budget 2021" para="News, updates and analysis on India's Union Budget 2021" />
+            <HeadingContent head={`${t('bottomCard.UnionBudget')}`} para={`${t('bottomCard.UnionBudgetSubHeading')}`} />
             <div>
                 <Carousel breakPoints={breakPoints}>
                 {
@@ -69,7 +72,7 @@ export const BottomCard=()=> {
             </div>
 
             {/* showing the latestStory data by mapping in the carousal */}
-            <HeadingContent head="Latest Stories" para="Latest published stories, interviews, and updates across YourStory properties" />
+            <HeadingContent head={`${t('bottomCard.LatestStories')}`} para={`${t('bottomCard.LatestStoriesSubHeading')}`} />
             <div>
                 <Carousel breakPoints={breakPoints}>
                 {
@@ -83,7 +86,7 @@ export const BottomCard=()=> {
             </div>
 
             {/* showing the interview data by mapping in the carousal */}
-            <HeadingContent head="Interview" para="Conversations with entrepreneurs, leaders, influencers, and changemakers" />
+            <HeadingContent head={`${t('bottomCard.Interview')}`} para={`${t('bottomCard.InterviewSubHeading')}`} />
             <div>
                 <Carousel breakPoints={breakPoints}>
                 {
@@ -97,7 +100,7 @@ export const BottomCard=()=> {
             </div>
 
             {/* showing the expertOpinion data by mapping in the carousal */}
-            <HeadingContent head="Expert Opinion" para="Analysis and opinion pieces by guest authors, contributors, experts" />
+            <HeadingContent head={`${t('bottomCard.ExpertOpinion')}`} para={`${t('bottomCard.ExpertOpinionSubHeading')}`} />
             <div>
                 <Carousel breakPoints={breakPoints}>
                 {
