@@ -1,20 +1,19 @@
 import React from 'react';
 import YouTube from 'react-youtube'
+import styles from './YourstoryComp.module.css'
 
 class YourstoryTv extends React.Component {
     render() {
         const {id} = this.props
         const opts = {
-            height: '550',
+            height: '600px',
             width: '100%',
-            
             playerVars: {
-                // https://developers.google.com/youtube/player_parameters
                 autoplay: 1,
             },
         };
 
-        return <YouTube videoId={id} opts={opts} onReady={this._onReady} />;
+        return <YouTube videoId={id} className={styles.com} opts={opts} onReady={this._onReady} />;
     }
 
     _onReady(event) {

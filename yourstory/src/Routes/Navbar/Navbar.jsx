@@ -196,23 +196,15 @@ export default function Navbar() {
                 <IconButton aria-label="show 4 new mails" color="inherit">
                 <Badge style={{color:"#bf360c"}}>
                     <Select
-                        // labelId="demo-controlled-open-select-label"
-                        // id="demo-controlled-open-select"
-                        // open={open}
-                        // onClose={handleClose}
-                        // onOpen={handleOpen}
-                        // value={age}
-                        // onChange={handleChange}
                         disabled={!isOver}
                         onMouseEnter={onEnter}
                         onMouseLeave={onLeave}
                         >
                         <MenuItem value="">
-                            <em>None</em>
+                            <em>English</em>
                         </MenuItem>
-                        <MenuItem value={10}>Ten</MenuItem>
-                        <MenuItem value={20}>Twenty</MenuItem>
-                        <MenuItem value={30}>Thirty</MenuItem>
+                        <MenuItem value={10}>French</MenuItem>
+                        <MenuItem value={20}>German</MenuItem>
                     </Select>
                 </Badge>
                 </IconButton>
