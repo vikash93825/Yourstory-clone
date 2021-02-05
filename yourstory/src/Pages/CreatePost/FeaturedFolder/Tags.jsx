@@ -48,7 +48,7 @@ const Tags = (props) => {
                         </Tooltip>
                 <br />
                 <select name = "tagSelect" className = {styles.tagSelect}>
-                    <option value = "">no tags available</option>
+                    <option value = "">{tag.length <= 0 ? "no tags available" : tag} </option>
                 </select>
             </div>
             <div className = {styles.addTagBtn}>

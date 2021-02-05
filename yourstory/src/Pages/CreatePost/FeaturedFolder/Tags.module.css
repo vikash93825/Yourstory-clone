@@ -4,7 +4,8 @@
 }
 
 .tagSelect {
-  width: 850px;
+  min-width: 150px;
+  max-width: 850px;
   padding: 10px;
 }
 
