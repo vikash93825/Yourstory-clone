@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
 const Search = () => {
   const { t, i18n } = useTranslation();
   const classes = useStyles();
-  let newsData = useSelector(state => state.source)
+  const newsData = useSelector(state => state.app.source)
   const dispatch = useDispatch()
   const [params, setParams] = React.useState([]);
   let langData = []

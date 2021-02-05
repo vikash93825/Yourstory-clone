@@ -202,13 +202,7 @@ export const postStory = (payload) => dispatch => {
   return axios({
     method: 'POST',
     url: 'http://localhost:3002/sources/',
-    data: {
-      title:payload.title,
-      descrition: payload.subtitle,
-      img_url: payload.image,
-      tag: payload.tag,
-      brand: payload.brand
-    }
+    data: payload
   })
   // .then(res => dispatch(postStorySuccess(res)))
   // .catch(err => dispatch(postStoryFailure(err)))

@@ -25,7 +25,7 @@ export const BottomCard=()=> {
     }, []);
 
     //getting source data from database
-    const source = useSelector(state => state.source)
+    const source = useSelector(state => state.app.source)
 
     //filtering the startup data which will be used to show in the landing page
     const startup = source.filter((item)=> item.category == "Startup")
