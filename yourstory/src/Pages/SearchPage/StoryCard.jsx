@@ -40,7 +40,7 @@ const StoryCard = (props) => {
   // { pathname: '/somewhere', state: { fromDashboard: true } } 
   return (
     <div className={styles.card} >
-      <Link to={`/story?q=${start_id}`}>
+      <Link style={{textDecoration:"none",color:"black"}} to={`/story?q=${start_id}`}>
       <Card className={classes.root}>
         <CardActionArea>
           <CardMedia

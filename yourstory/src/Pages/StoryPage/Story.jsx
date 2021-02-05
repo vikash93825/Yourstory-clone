@@ -3,7 +3,8 @@ import styles from "./Story.module.css"
 import { Container, Hidden,Button,Card ,Divider} from "@material-ui/core"
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 import { useParams ,useHistory} from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { postBookMarkData } from "../../Redux/DataRedux/actionCreator";
 const Story = () =>{
     const history  =useHistory()
     const params = new URLSearchParams(window.location.search)
@@ -15,9 +16,10 @@ const Story = () =>{
     //console.log(history.location.pathname)
     const storyData = data.find((item)=>item.start_id===id)
     console.log(storyData)
-
+    const dispatch = useDispatch()
     const handleBookMark = () =>{
         console.log("bookmark")
+        dispatch(postBookMarkData(storyData))
     }
 
     return(

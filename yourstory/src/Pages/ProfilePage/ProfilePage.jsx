@@ -48,6 +48,7 @@ const ProfilePage = () => {
     }
     const handleGoToBookMarksPage = () => {
         console.log();
+        history.push('/bookmark')
     }
     const handlePassword = () => {
         console.log()

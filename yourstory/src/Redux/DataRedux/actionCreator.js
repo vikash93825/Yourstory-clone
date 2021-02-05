@@ -12,7 +12,13 @@ import {
   FILTERBYLANGUAGEFAILURE,
   POSTSTORY,
   POSTSTORYSUCCESS,
-  POSTSTORYFAILURE
+  POSTSTORYFAILURE,
+  BOOKMARK_REQUEST,
+  BOOKMARK_SUCCESS,
+  BOOKMARK_FAILURE,
+  GET_BOOKMARK_FAILURE,
+  GET_BOOKMARK_REQUEST,
+  GET_BOOKMARK_SUCCESS
 } 
 from "./actionTypes";
 
@@ -208,3 +214,54 @@ export const postStory = (payload) => dispatch => {
   // .catch(err => dispatch(postStoryFailure(err)))
 }
 
+export const postBookMarkReq = (payload)=>({
+  type:BOOKMARK_REQUEST,
+  payload
+})
+
+export const postBookMarkSuccess = (payload)=>({
+  type:BOOKMARK_SUCCESS,
+  payload
+})
+
+export const postBookMarkFailure = (payload)=>({
+  type:BOOKMARK_FAILURE,
+  payload
+})
+
+export const postBookMarkData = (payload)=>(dispatch)=>{
+  dispatch(postBookMarkReq())
+  axios({
+    method:"post",
+    url:"http://localhost:3002/bookmark",
+    data:payload
+  })
+  .then(res=>dispatch(postBookMarkSuccess({message:"bookmark added"})))
+  .catch(err=>dispatch(postBookMarkFailure({message:"error"})))
+}
+
+
+export const getBookMarkReq = (payload)=>({
+  type:GET_BOOKMARK_REQUEST,
+  payload
+})
+
+export const getBookMarkSuccess = (payload)=>({
+  type:GET_BOOKMARK_SUCCESS,
+  payload
+})
+
+export const getBookMarkFailure = (payload)=>({
+  type:GET_BOOKMARK_FAILURE,
+  payload
+})
+
+export const getBookMarkData = (payload)=>(dispatch)=>{
+  dispatch(getBookMarkReq())
+  axios({
+    method:"get",
+    url:"http://localhost:3002/bookmark",
+  })
+  .then(res=>dispatch(getBookMarkSuccess(res.data)))
+  .catch(err=>dispatch(getBookMarkFailure({message:"error"})))
+}
