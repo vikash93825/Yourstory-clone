@@ -9,6 +9,7 @@ import Grid from "@material-ui/core/Grid"
 import Tags from "./FeaturedFolder/Tags"
 import { useDispatch } from "react-redux"
 import { postStory } from "../../Redux/DataRedux/actionCreator"
+import { Edit } from '../../Component/Edit';
 
 
 const FeaturedPage  = (props) => {
@@ -98,9 +99,8 @@ const FeaturedPage  = (props) => {
         <Grid >
           <UpdatedContentButton handleUpdate = {handleUpdate} handleReview = {handleReview} />
         </Grid>
-
       </Grid>
-
+      <Edit/>
     </Grid> 
   )
 }

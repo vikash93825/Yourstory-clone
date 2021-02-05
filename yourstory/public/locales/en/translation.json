@@ -27,5 +27,13 @@
         "SocialStory": "Social Story",
         "SmbStory": "SMBstory",
         "More": "More"
+    },
+    "SearchPage": {
+        "Filter": "Filter",
+        "Brand": "Brand"
+    },
+    "SearchBar": {
+        "Placeholder": "Placeholder",
+        "CompaniesBtn": "List Your Companies"
     }
 }

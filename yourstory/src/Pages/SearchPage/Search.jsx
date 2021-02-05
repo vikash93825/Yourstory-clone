@@ -14,6 +14,9 @@ import SearchBar from "../../Component/SearchBar";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSourceData, fetchFilteredData, fetchLanguageData } from "../../Redux/DataRedux/actionCreator";
 import { Link } from "react-router-dom";
+
+import { useTranslation } from 'react-i18next';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -25,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Search = () => {
+  const { t, i18n } = useTranslation();
   const classes = useStyles();
   let newsData = useSelector(state => state.source)
   const dispatch = useDispatch()
@@ -79,11 +83,11 @@ const Search = () => {
       <div style={{ width: "15%" ,margin:"10px"}}>
         <Hidden smDown implementation="css">
           <Typography variant="h4" component="h4">
-            Filter
+            {t('SearchPage.Filter')}
           </Typography>
           <Divider/>
           <Typography variant="p" component="p">
-            Brand
+          {t('SearchPage.Brand')}
           </Typography>
           <div style={{ marginTop: "15px" }}>
             <div style={{ marginTop: "5px" }}>

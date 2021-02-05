@@ -27,5 +27,13 @@
         "SocialStory": "Histoire sociale",
         "SmbStory": "Histoire de PME",
         "More": "Plus"
+    },
+    "SearchPage": {
+        "Filter": "Filtre",
+        "Brand": "Marque"
+    },
+    "SearchBar": {
+        "Placeholder": "Espace réservé",
+        "CompaniesBtn": "Listez vos entreprises"
     }
 }

@@ -27,6 +27,13 @@
             "SocialStory": "Soziale Geschichte",
             "SmbStory": "SMB-Geschichte",
             "More": "Mehr"
-
+        },
+        "SearchPage": {
+            "Filter": "Φίλτρο",
+            "Brand": "Marke"
+        },
+        "SearchBar": {
+            "Placeholder": "Platzhalter",
+            "CompaniesBtn": "Listen Sie Ihre Unternehmen auf"
         }
 }
