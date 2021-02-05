@@ -7,7 +7,9 @@ import ThumbAndBrand from "./FeaturedFolder/ThumbAndBrand"
 import UpdatedContentButton from "./FeaturedFolder/UpdatedContentButton"
 import Grid from "@material-ui/core/Grid"
 import Tags from "./FeaturedFolder/Tags"
-
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import parse from "html-react-parser"
 
 const FeaturedPage  = (props) => {
 
@@ -17,6 +19,14 @@ const FeaturedPage  = (props) => {
     const [tag, setTag] = useState("")
     const [brand, setBrand] = useState("MyStory")
     const [tagDescription, setTagDescription] = useState("")
+    const [text, setText] = useState("")
+    const [normalText, setNormalText] = useState("")
+
+    const handleRedirectToProfile = () => {
+        console.log();
+    }
+    console.log(normalText);
+    console.log(text);
    
 
     const handleChnageTitle = (e) => {
@@ -59,7 +69,8 @@ const FeaturedPage  = (props) => {
 
     const handleUpdate = (e) => {
         e.preventDefault()
-        console.log(title, subtitle, image, tag, brand);
+        console.log(normalText);
+        console.log(title, subtitle, image, tag, brand, normalText.props.children);
     }
     const handleReview = (e) => {
         e.preventDefault()
@@ -82,6 +93,24 @@ const FeaturedPage  = (props) => {
 
         <Grid xs = {12} >
           <Tags tag = {tag} handleTag = {handleTag} handleTagDescription = {handleTagDescription}  />
+        </Grid>
+
+        <Grid>
+        <div className = {styles.EditBioPage}>
+                <div className = {styles.editor} >
+                    <CKEditor
+                    editor = {ClassicEditor}
+                    data = {text}
+                    onChange = {(e, editor) => {
+                        const data = editor.getData()
+                        setText(data)
+                    }}
+                    />
+                </div>
+                <div>
+                    <button className = {styles.savBtn} onClick = { () => setNormalText(parse(text))} >Save</button>
+                </div>
+            </div>
         </Grid>
 
         <Grid >
