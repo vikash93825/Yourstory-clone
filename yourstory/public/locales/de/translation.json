@@ -1,5 +1,32 @@
 {
         "hello": {
            "1": "hallo"
+        },
+        "landing":{
+            "mainCard":"Der Haushalt 2021 positioniert Indien in Richtung seines Ziels einer 5-Tonnen-Wirtschaft: USISPF",
+            "sideBar": "Gewerkschaftshaushalt 2021",
+            "sideBarSubheading": "Mit Budget 2021 Geschichten"
+        },
+        "bottomCard": {
+                "Startup": "Anlaufen",
+                "StartupSubHeading": "Deep-Dive-Geschichten von Changemakers und Innovatoren aus dem Startup-Ökosystem",
+                "UnionBudget": "Unionshaushalt 2021",
+                "UnionBudgetSubHeading": "Nachrichten, Aktualisierungen und Analysen zum indischen Unionshaushalt 2021",
+                "LatestStories": "Neueste Geschichten",
+                "LatestStoriesSubHeading": "Neueste veröffentlichte Storys, Interviews und Updates in allen YourStory-Eigenschaften",
+                "Interview": "Συνέντευξη",
+                "InterviewSubHeading": "Neueste veröffentlichte Storys, Interviews und Updates in allen YourStory-Eigenschaften",
+                "ExpertOpinion": "Expertenmeinung",
+                "ExpertOpinionSubHeading": "Analyse- und Meinungsbeiträge von Gastautoren, Mitwirkenden, Experten"
+        },
+        "Navbar": {
+            "Yourstory": "Deine Geschichte",
+            "YourstoryClub": "Verein",
+            "YourstoryTv": "Fernseher",
+            "HerStory": "Ihre Geschichte",
+            "SocialStory": "Soziale Geschichte",
+            "SmbStory": "SMB-Geschichte",
+            "More": "Mehr"
+
         }
 }

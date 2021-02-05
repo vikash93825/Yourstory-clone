@@ -1,5 +1,31 @@
 {
     "hello": {
        "1": "Bonjour"
+    },
+    "landing":{
+        "mainCard":"Le budget 2021 positionne l'Inde vers son objectif d'économie de 5 milliards de dollars: USISPF",
+        "sideBar": "budget syndical 2021",
+        "sideBarSubheading": "Avec les histoires du budget 2021"
+    },
+    "bottomCard": {
+        "Startup": "Commencez",
+        "StartupSubHeading": "Des histoires approfondies d'acteurs du changement et d'innovateurs de l'écosystème startup",
+        "UnionBudget": "Budget de l'Union 2021",
+        "UnionBudgetSubHeading": "Actualités, mises à jour et analyses sur le budget de l'Union indienne 2021",
+        "LatestStories": "Dernières histoires",
+        "LatestStoriesSubHeading": "Dernières histoires, interviews et mises à jour publiées sur les propriétés YourStory",
+        "Interview": "Entrevue",
+        "InterviewSubHeading": "Dernières histoires, interviews et mises à jour publiées sur les propriétés YourStory",
+        "ExpertOpinion": "Opinion d'expert",
+        "ExpertOpinionSubHeading": "Analyse et articles d'opinion d'auteurs invités, de contributeurs, d'experts"
+    },
+    "Navbar": {
+        "Yourstory": "Ton histoire",
+        "YourstoryClub": "club",
+        "YourstoryTv": "la télé",
+        "HerStory": "Son histoire",
+        "SocialStory": "Histoire sociale",
+        "SmbStory": "Histoire de PME",
+        "More": "Plus"
     }
 }

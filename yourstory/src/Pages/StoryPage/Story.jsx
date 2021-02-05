@@ -2,19 +2,29 @@ import React from "react"
 import styles from "./Story.module.css"
 import { Container, Hidden,Button,Card ,Divider} from "@material-ui/core"
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
+import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 
 const Story = () =>{
 
-
+    const params = useParams()
+    const {startId} = params
+    const data = useSelector(state=>state.source)
+    console.log(startId,data)
+    const storyData = data.find((item)=>item.start_id===startId)
+    console.log(storyData)
+    const handleBookMark = () =>{
+        console.log("bookmark")
+    }
     return(
         <div className={styles.main}>
         <div>
-            <Button className={styles.tags} color="secondary" style={{background:"#323232"}} variant="contained">Education</Button>
-            <p className={styles.life}>To improve our education, we need to stop mass production, says Sadhguru</p>
+            <Button className={styles.tags} color="secondary" style={{background:"#323232"}} variant="contained">{storyData.tag}</Button>
+            <p className={styles.life}>{storyData.title}</p>
             <div className={styles.facebook}>
                 <div className={styles.date} >
-                    <p>By Anju Ann Mathew|29th Jan 2021</p>
+                    <p>By {storyData.authors} | {storyData.date}</p>
                 </div>
               
             </div>
@@ -22,7 +32,7 @@ const Story = () =>{
             <div className="row">
                 <div className="">
                     <div>
-                        <img src="https://images.yourstory.com/cs/2/6f8dcd002d6d11e9aa979329348d4c3e/Sadhgurupic11558799467939-1586767777891.png?fm=png&auto=format&ar=2:1&mode=crop&crop=face" width="100%" alt=""/>
+                        <img src={storyData.img_url} width="100%" alt=""/>
                     </div>
                     <div>
                     <div className={styles.qoutes}>
@@ -35,7 +45,7 @@ const Story = () =>{
                             <img width="25px" src="https://static.thenounproject.com/png/1471176-200.png" alt=""/>
                         </div>
                         <div>
-                            <BookmarkBorderIcon style={{marginRight:"10px"}}/>
+                            <BookmarkBorderIcon style={{marginRight:"10px"}} onClick={handleBookMark}/>
                             <img width="25px" src="https://static.thenounproject.com/png/1471176-200.png" alt=""/>
                         </div>
                     </div>
@@ -45,7 +55,7 @@ const Story = () =>{
                     <div className={styles.story}>
                         <p>Story</p>
                         <hr/>
-                        <p className={styles.desc}>In India, the concept of education has been very sacred. But over the years, people lost their way and made it about obtaining credits and mechanising the minds. Starting with that thought, Sandeep Sinha, Co-founder and Managing Partner of Lumis Partners, put forward the question, “Where do you think education lost the script?</p>
+                        <p className={styles.desc}>{storyData.description}</p>
                        
                     </div>
                 </div>

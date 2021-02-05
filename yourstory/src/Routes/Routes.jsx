@@ -8,9 +8,13 @@ import Topbar from './Navbar/Topbar'
 import { Story } from '../Pages/StoryPage/Story';
 import LandingPage from '../Pages/LandingPage/LandingPage';
 import FeaturedPage from '../Pages/CreatePost/FeaturedPage';
-import { Edit } from '../Component/Edit';
 import SmbPage from '../Pages/smbPage/SmbPage';
 import {YourStoryComp} from '../Pages/YourstoryTv/YourStoryComp';
+import { Edit } from '../Component/Edit';
+import { ProfilePage } from '../Pages/ProfilePage/ProfilePage';
+import { Login } from '../Pages/Login/Login';
+import { Register } from '../Pages/Register/Register';
+import { Bookmark } from '../Pages/Bookmark/Bookmark';
 import { useTranslation } from 'react-i18next';
 
 const Routes = () => {
@@ -29,6 +33,10 @@ const Routes = () => {
                 <Route path="/editor" render ={()=><Edit/>}/>
                 <Route path="/smbstory" render={()=> <SmbPage/>} />
                 <Route path="/videos" render={()=> <YourStoryComp/>} /> 
+                <Route path="/profile" render={()=><ProfilePage/>}/>
+                <Route path = "/login" render={()=><Login/>}/>
+                <Route path = "/signup" render={()=><Register/>}/>
+                <Route path = "/bookmark" render={()=><Bookmark/>}/>
             </Switch>
             <Route path="/" render={()=><Footer/>}/>
         </div>

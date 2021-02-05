@@ -16,6 +16,7 @@ import { useHistory } from "react-router-dom";
 const useStyles = makeStyles({
   root: {
     maxWidth: 250,
+
   },
   media: {
     height: 140,
@@ -24,9 +25,9 @@ const useStyles = makeStyles({
 
 const StoryCard = (props) => {
   const classes = useStyles();
-  const {start_id,title,description,date,img_url} = props.element;
-  // console.log(description)
-  // console.log(start_id)
+  const {start_id,title,description,date,img_url,tag} = props.element;
+  //console.log(description)
+  //console.log(start_id)
   const history = useHistory()
   const handleCard =()=>{
     history.push(
@@ -41,20 +42,19 @@ const StoryCard = (props) => {
             className={classes.media}
             image={`${img_url}`}
             title="Contemplative Reptile"
-            
           />
           <CardContent>
             <Typography gutterBottom variant="p" component="p" style={{}}>
               {date}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-            {description}
+            {title}
             </Typography>
           </CardContent>
         </CardActionArea>
         <CardActions>
           <Button size="small" color="secondry" style={{color:"#f23f2d",background:"#fff5f4"}}>
-            UNION BUDGET
+            {tag}
           </Button>
         </CardActions>
       </Card>

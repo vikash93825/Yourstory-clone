@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
 import { fade, makeStyles } from '@material-ui/core/styles';
-import {Select, Menu, MenuItem, Badge, Typography, IconButton, Toolbar, AppBar} from '@material-ui/core'
+import {Select, Menu, MenuItem, Badge, Typography, IconButton, Toolbar, AppBar, Hidden} from '@material-ui/core'
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles((theme) => ({
     hr:{
@@ -73,6 +74,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Navbar() {
+    const { t, i18n } = useTranslation();
+
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -100,7 +103,10 @@ export default function Navbar() {
     const handleMobileMenuOpen = (event) => {
         setMobileMoreAnchorEl(event.currentTarget);
     };
-
+    const history = useHistory()
+    const handleProfile=()=>{
+       history.push("/profile")
+    }
     const menuId = 'primary-search-account-menu';
     const renderMenu = (
         <Menu
@@ -112,7 +118,7 @@ export default function Navbar() {
         open={isMenuOpen}
         onClose={handleMenuClose}
         >
-        <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+        <MenuItem onClick={handleMenuClose}><span onClick={handleProfile}>Profile</span></MenuItem>
         <MenuItem onClick={handleMenuClose}>My account</MenuItem>
         </Menu>
     );
@@ -164,25 +170,31 @@ export default function Navbar() {
             <Toolbar className={classes.pad}>
             
             <Typography style={{color:"#212121"}} variant="h8" noWrap>
-                <Link to="/" className={classes.link}>YourStory</Link>
+                <Link to="/" className={classes.link}>{t('Navbar.Yourstory')}</Link>
             </Typography>
+
             <Typography variant="h8" style={{color:"#212121"}} noWrap>
-            YourStory Club
+            <Hidden smDown>{t('Navbar.YourstoryClub')}</Hidden>
             </Typography>
+
             <Typography variant="h8" style={{color:"#212121"}} noWrap>
-            <Link to="/videos" className={classes.link}>YourStory TV</Link>
+            <Link to="/videos" className={classes.link}>{t('Navbar.YourstoryTv')}</Link>
             </Typography>
+
             <Typography variant="h8" style={{color:"#212121"}} noWrap>
-            <Link to="/herstory" className={classes.link}>HerStory</Link>
+            <Hidden smDown> <Link to="/herstory" className={classes.link}>{t('Navbar.HerStory')}</Link></Hidden>
             </Typography>
+
             <Typography className={classes.title} variant="h8" style={{color:"#212121"}} noWrap>
-            <Link to="/socialstory" className={classes.link}>SocialStory</Link>
+            <Hidden smDown> <Link to="/socialstory" className={classes.link}>{t('Navbar.SocialStory')}</Link></Hidden>
             </Typography>
+
             <Typography className={classes.title} variant="h8" style={{color:"#212121"}} noWrap>
-            <Link to="/smbstory" className={classes.link}>SMBStory</Link>
+            <Hidden smDown> <Link to="/smbstory" className={classes.link}>{t('Navbar.SmbStory')}</Link></Hidden>
             </Typography>
+
             <Typography className={classes.title} variant="h8" style={{color:"#212121"}} noWrap>
-            More
+            <Hidden smDown>{t('Navbar.More')}</Hidden>
             </Typography>
             
             <div className={classes.grow} />
