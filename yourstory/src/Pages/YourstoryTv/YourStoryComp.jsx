@@ -22,7 +22,7 @@ export const YourStoryComp=()=> {
     return (
         <div>
         <Carousel breakPoints={breakPoints}>
-            <Item>
+            <Item >
                 <img src="https://images.yourstory.com/cs/2/2d86ed30b28211e8b2e7114aea10c711/Videothumbnail-01-1605779706950.png?fm=png&ar=2:1&mode=crop&crop=faces?" style={{paddingLeft:"200px", paddingTop:"100px"}} />
             </Item>
             <Item>

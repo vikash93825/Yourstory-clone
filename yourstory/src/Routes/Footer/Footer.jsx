@@ -2,7 +2,7 @@ import React from 'react';
 import {Link, NavLink} from 'react-router-dom'
 import styles from './Footer.module.css';
 import Button from '@material-ui/core/Button';
-import { Grid } from '@material-ui/core';
+import { Grid, Hidden } from '@material-ui/core';
 
 const Footer = () => {
     return (
@@ -43,7 +43,7 @@ const Footer = () => {
 
                 <Grid xs={12} md={2} lg={2}>
                     <div className={styles.main}>
-                        <div className={styles.name} >Topics</div>
+                        <Hidden smDown><div className={styles.name} >Topics</div>
                         <div>
                             <Link>Startups</Link>
                         </div>
@@ -56,7 +56,9 @@ const Footer = () => {
                         <div>
                             <Link>Expert Opinion</Link>
                         </div>
+                        </Hidden>
                     </div>
+                    
                 </Grid>
 
                 <Grid xs={12} md={2} lg={2}>
@@ -75,7 +77,7 @@ const Footer = () => {
 
                 <Grid xs={12} md={2} lg={2}>
                     <div className={styles.main}>
-                        <div className={styles.name} >About</div>
+                        <Hidden smDown> <div className={styles.name} >About</div>
                         <div>
                             <Link>Advertise with us</Link>
                         </div>
@@ -88,6 +90,7 @@ const Footer = () => {
                         <div>
                             <Link>Events</Link>
                         </div>
+                        </Hidden>
                     </div>
                 </Grid>
 

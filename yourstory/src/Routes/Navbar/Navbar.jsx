@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { fade, makeStyles } from '@material-ui/core/styles';
-import {Select, Menu, MenuItem, Badge, Typography, IconButton, Toolbar, AppBar} from '@material-ui/core'
+import {Select, Menu, MenuItem, Badge, Typography, IconButton, Toolbar, AppBar, Hidden} from '@material-ui/core'
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
@@ -169,23 +169,29 @@ export default function Navbar() {
             <Typography style={{color:"#212121"}} variant="h8" noWrap>
                 <Link to="/" className={classes.link}>YourStory</Link>
             </Typography>
+
             <Typography variant="h8" style={{color:"#212121"}} noWrap>
-            YourStory Club
+            <Hidden smDown>  YourStory Club</Hidden>
             </Typography>
+
             <Typography variant="h8" style={{color:"#212121"}} noWrap>
             <Link to="/videos" className={classes.link}>YourStory TV</Link>
             </Typography>
+
             <Typography variant="h8" style={{color:"#212121"}} noWrap>
-            <Link to="/herstory" className={classes.link}>HerStory</Link>
+            <Hidden smDown> <Link to="/herstory" className={classes.link}>HerStory</Link></Hidden>
             </Typography>
+
             <Typography className={classes.title} variant="h8" style={{color:"#212121"}} noWrap>
-            <Link to="/socialstory" className={classes.link}>SocialStory</Link>
+            <Hidden smDown> <Link to="/socialstory" className={classes.link}>SocialStory</Link></Hidden>
             </Typography>
+
             <Typography className={classes.title} variant="h8" style={{color:"#212121"}} noWrap>
-            <Link to="/smbstory" className={classes.link}>SMBStory</Link>
+            <Hidden smDown> <Link to="/smbstory" className={classes.link}>SMBStory</Link></Hidden>
             </Typography>
+
             <Typography className={classes.title} variant="h8" style={{color:"#212121"}} noWrap>
-            More
+            <Hidden smDown> More</Hidden>
             </Typography>
             
             <div className={classes.grow} />
