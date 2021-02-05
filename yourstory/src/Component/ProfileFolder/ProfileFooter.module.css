@@ -1,0 +1,15 @@
+.footerStyle {
+  background-color: #dff7f4;
+  text-align: center;
+}
+.companyAddress {
+  text-align: right;
+}
+.paddingTop70 {
+  padding-top: 70px;
+}
+
+.favIconStyle {
+  padding-top: 4px;
+  width: 17px;
+}
