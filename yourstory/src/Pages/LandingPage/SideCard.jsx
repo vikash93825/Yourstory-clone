@@ -5,6 +5,7 @@ import {
     Typography,
     Button
 } from "@material-ui/core";
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles({
     root: {
@@ -24,10 +25,14 @@ const useStyles = makeStyles({
 });
 
 
-const SideCard = ({img_url, description, category}) => {
+const SideCard = ({start_id,img_url, description, category}) => {
     const classes = useStyles();
+    const history = useHistory()
+    const handleClick=()=>{
+        history.push(`/story/${start_id}`)
+    }
     return (
-        <div>
+        <div onClick={handleClick}>
             <Card className={classes.root}>
                 <div className={classes.media} >
                     <img src={img_url} style={{borderRadius:"5px"}} width="90px" height="80px" />    

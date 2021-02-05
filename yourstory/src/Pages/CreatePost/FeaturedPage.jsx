@@ -12,7 +12,7 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import parse from "html-react-parser"
 
 const FeaturedPage  = (props) => {
-
+    
     const [title, setTitle] = useState("")
     const [subtitle, setSubTitle] = useState("")
     const [image,setImage] = useState(null)

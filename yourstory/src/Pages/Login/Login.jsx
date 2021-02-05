@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import {
   Typography,
   Container,
@@ -12,7 +12,9 @@ import {
   Box
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
+import { useDispatch,useSelector } from "react-redux";
+import { loginData } from "../../Redux/AuthRedux/actionCreators";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -40,13 +42,42 @@ const Login = () => {
 
   const [email,setEmail] = useState("")
   const [password,setPassword] = useState("")
+  const [isFound,setFound] = useState(false)
+
+  const usersData = useSelector(state=>state.auth.userData)
+  const isAuth = useSelector(state=>state.auth.isAuth)
+  const  dispatch =useDispatch()
+  useEffect(()=>{
+    dispatch(loginData())
+  },[])
+
   const handleLogin = (e)=>{
       e.preventDefault()
       console.log(email,password)
+
+        for (let i = 0; i < usersData.length ; i++) {
+            
+            if (usersData[i].email === email && usersData[i].password === password) {
+                    
+                 localStorage.setItem("loginData",JSON.stringify(usersData[i]) )
+                   //const loggedUserData=usersData[i]
+                    
+                     setFound(true)   
+                    break  
+            }
+
+            else{
+                if(usersData[i].email === email && usersData[i].password !== password){
+
+                    setFound(true);
+                    break 
+                }
+            }
+        }
   }
 
   const classes = useStyles()
-  return (
+  return  !isFound?(
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <Paper className={classes.paper}>
@@ -109,6 +140,6 @@ const Login = () => {
       </Paper>
       <Box mt={8}></Box>
     </Container>
-  );
+  ):<Redirect to="/"/>;
 };
 export { Login };

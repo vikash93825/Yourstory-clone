@@ -5,13 +5,15 @@ import {
     LOGIN_REQUEST,
     LOGIN_SUCCESS,
     LOGIN_FAILURE,
+    LOG_OUT
   } from "./actionTypes";
 
   const initState = {
       isAuth:false,
       isLoading:false,
       isError:false,
-      message:""
+      message:"",
+      userData:[]
   }
 
   export const authReducer =(state=initState,{type,payload})=>{
@@ -34,6 +36,29 @@ import {
                     isError:true,
                     message:payload
                 }
+                case LOGIN_REQUEST:
+                    return{
+                        ...state,
+                        isLoading:true
+                    }
+                  case LOGIN_SUCCESS:
+                      return{
+                          ...state,
+                          isAuth:true,
+                          isLoading:false,
+                          userData:payload
+                      }
+                  case LOGIN_FAILURE:
+                      return{
+                          ...state,
+                          isError:true,
+                          message:payload
+                      }
+                      case LOG_OUT:
+                        return {
+                          ...state,
+                          isAuth: false,
+                        };
             default:
                 return state
       }
