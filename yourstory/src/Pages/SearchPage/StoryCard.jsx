@@ -30,14 +30,14 @@ const StoryCard = (props) => {
   const history = useHistory()
   
   const handleCard =()=>{
-    console.log(start_id)
 
     history.push({
       pathname:`/story/${start_id}`,
       state:props.element
-    } )
-
+    } 
+    )
   }
+  // { pathname: '/somewhere', state: { fromDashboard: true } } 
   return (
     <div className={styles.card} onClick={handleCard}>
       <Card className={classes.root}>
