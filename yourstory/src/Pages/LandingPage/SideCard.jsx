@@ -28,8 +28,9 @@ const useStyles = makeStyles({
 const SideCard = ({start_id,img_url, description, category}) => {
     const classes = useStyles();
     const history = useHistory()
+    
     const handleClick=()=>{
-        history.push(`/story/${start_id}`)
+        history.push(`/story?q=${start_id}`)
     }
     return (
         <div onClick={handleClick}>

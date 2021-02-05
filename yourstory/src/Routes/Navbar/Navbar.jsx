@@ -75,7 +75,9 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Navbar() {
     const { t, i18n } = useTranslation();
-
+    const handleClick = (lang) => {
+      i18n.changeLanguage(lang);
+    }
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -213,12 +215,9 @@ export default function Navbar() {
                         onMouseEnter={onEnter}
                         onMouseLeave={onLeave}
                         >
-                        <MenuItem value="">
-                            <em>None</em>
-                        </MenuItem>
-                        <MenuItem value={10}>Ten</MenuItem>
-                        <MenuItem value={20}>Twenty</MenuItem>
-                        <MenuItem value={30}>Thirty</MenuItem>
+                        <MenuItem value={10} onClick={()=>handleClick('en')}>English</MenuItem>
+                        <MenuItem value={20} onClick={()=>handleClick('fr')}>French</MenuItem>
+                        <MenuItem value={30} onClick={()=>handleClick('de')}>German</MenuItem>
                     </Select>
                 </Badge>
                 </IconButton>

@@ -2,16 +2,18 @@ import React from "react"
 import styles from "./Story.module.css"
 import { Container, Hidden,Button,Card ,Divider} from "@material-ui/core"
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
-import { useParams } from "react-router-dom";
+import { useParams ,useHistory} from "react-router-dom";
 import { useSelector } from "react-redux";
 const Story = () =>{
-    const params = useParams()
-    const {startId} = params
+    const history  =useHistory()
+    const params = new URLSearchParams(window.location.search)
+    const id = params.get("q")
+    console.log(params.get("q"))
     console.log(params)
     const data = useSelector(state=>state.app.source)
-    console.log(startId,data)
 
-    const storyData = data.find((item)=>item.start_id===startId)
+    //console.log(history.location.pathname)
+    const storyData = data.find((item)=>item.start_id===id)
     console.log(storyData)
 
     const handleBookMark = () =>{
@@ -20,7 +22,7 @@ const Story = () =>{
 
     return(
         <div className={styles.main}>
-        {/* <div>
+        <div>
             <Button className={styles.tags} color="secondary" style={{background:"#323232"}} variant="contained">{storyData.tag}</Button>
             <p className={styles.life}>{storyData.title}</p>
             <div className={styles.facebook}>
@@ -57,7 +59,7 @@ const Story = () =>{
                     </div>
                 </div>
             </div>
-        */}
+       
     </div>
     )
 }

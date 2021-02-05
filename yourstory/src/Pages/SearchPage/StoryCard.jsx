@@ -11,7 +11,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import styles from "./StoryCard.module.css";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
@@ -29,17 +29,18 @@ const StoryCard = (props) => {
   // console.log(data)
   const history = useHistory()
   
-  const handleCard =()=>{
+  // const handleCard =()=>{
 
-    history.push({
-      pathname:`/story/${start_id}`,
-      state:props.element
-    } 
-    )
-  }
+  //   history.push({
+  //     pathname:`/story/${start_id}`,
+  //     state:props.element
+  //   } 
+  //   )
+  // }
   // { pathname: '/somewhere', state: { fromDashboard: true } } 
   return (
-    <div className={styles.card} onClick={handleCard}>
+    <div className={styles.card} >
+      <Link to={`/story?q=${start_id}`}>
       <Card className={classes.root}>
         <CardActionArea>
           <CardMedia
@@ -62,6 +63,7 @@ const StoryCard = (props) => {
           </Button>
         </CardActions>
       </Card>
+      </Link>
     </div>
   );
 };

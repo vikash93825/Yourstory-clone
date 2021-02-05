@@ -11,17 +11,14 @@ import { useTranslation } from 'react-i18next';
 
 
 function App() {
-  const { t, i18n } = useTranslation();
-  const handleClick = (lang) => {
-    i18n.changeLanguage(lang);
-  }
+  
 
   return (
     <div>
       <nav>
-        <button onClick={()=>handleClick('en')}>ENGLISH</button>
+        {/* <button onClick={()=>handleClick('en')}>ENGLISH</button>
         <button onClick={()=>handleClick('de')}>GERMAN</button>
-        <button onClick={()=>handleClick('fr')}>FRENCH</button>
+        <button onClick={()=>handleClick('fr')}>FRENCH</button> */}
       </nav>
      {/* <I18nProvider locale={LOCALES.FRENCH}> */}
     <div className="App">
