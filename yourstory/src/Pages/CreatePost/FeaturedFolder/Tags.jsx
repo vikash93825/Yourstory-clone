@@ -7,8 +7,6 @@ import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import HighlightOffRoundedIcon from '@material-ui/icons/HighlightOffRounded';
 import { makeStyles } from '@material-ui/core/styles';
-
-
 const useStyles = makeStyles((theme) => ({
     modal: {
       display: 'flex',
@@ -22,23 +20,17 @@ const useStyles = makeStyles((theme) => ({
       padding: theme.spacing(2, 4, 3),
     },
   }));
-
 const Tags = (props) => {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
     const {tag, handleTag, handleTagDescription} = props
-
     const handleOpen = () => {
         setOpen(true);
       };
-    
       const handleClose = () => {
         setOpen(false);
       };
-
-
     return (
-        
         <div className = {styles.displayFlex} >
             <div className = {styles.margin10}>
                 Tags <Tooltip title="you can have 1 tag in a story" arrow>
@@ -48,7 +40,7 @@ const Tags = (props) => {
                         </Tooltip>
                 <br />
                 <select name = "tagSelect" className = {styles.tagSelect}>
-                    <option value = "">no tags available</option>
+                    <option value = "">{tag.length <= 0 ? "no tags available" : tag} </option>
                 </select>
             </div>
             <div className = {styles.addTagBtn}>
@@ -83,8 +75,6 @@ const Tags = (props) => {
                 </div>
             </div>
         </div>
-        
     )
 }
-
 export default Tags

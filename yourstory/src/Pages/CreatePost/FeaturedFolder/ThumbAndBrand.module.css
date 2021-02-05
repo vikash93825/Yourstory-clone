@@ -1,12 +1,10 @@
 .margin20 {
   margin: 20px;
-  padding-left: 100px;
+  /* padding-left: 100px; */
 }
-
 .colorRed {
   color: red;
 }
-
 .customfileupload {
   display: flex;
   flex-direction: column;
@@ -19,11 +17,9 @@
   justify-content: center;
   background-color: cyan;
 }
-
 .cutomFileImg {
   width: 40px;
 }
-
 .titleSvg {
   width: 15px;
 }

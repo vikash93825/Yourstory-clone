@@ -26,7 +26,6 @@ const ThumbAndBrand = (props) => {
                             <input style = {{display:"none"}} onChange= {handleImageChange} type="file"/>
                             click select or upload image
                         </label>
-
                     </div>
                 </div>
                 <p className = {styles.colorRed} >* Website thumbnail is required</p>
@@ -34,6 +33,4 @@ const ThumbAndBrand = (props) => {
         </>
     )
 }
-
-
 export default ThumbAndBrand
