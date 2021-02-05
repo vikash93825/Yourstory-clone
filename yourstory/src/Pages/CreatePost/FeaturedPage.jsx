@@ -69,6 +69,38 @@ const FeaturedPage  = (props) => {
 
     const handleUpdate = (e) => {
         e.preventDefault()
+        // console.log(title, subtitle, image, tag, brand);
+        let payload = {
+            start_id: uuidv4(),
+            title:title,
+            descrition: "",
+            img_url: image,
+            tag: "dshaklf",
+            brand,
+            date: new Date().toLocaleDateString(),
+            language: "en",
+            authors: 'yourstory',
+            category: 'education',
+            country: "us",
+            like: 6,
+            user_id: 2,
+            french: {
+                    start_id: uuidv4(),
+                    title:title,
+                    descrition: "",
+                    img_url: image,
+                    tag: "dfadfad",
+                    brand,
+                    date: new Date().toLocaleDateString(),
+                    language: "fr",
+                    authors: 'yourstory',
+                    category: 'education',
+                    country: "us",
+                    like: 6,
+                    user_id: 2,
+            }
+        };
+          dispatch(postStory(payload))
         console.log(normalText);
         console.log(title, subtitle, image, tag, brand, normalText.props.children);
     }

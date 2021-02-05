@@ -26,15 +26,17 @@ const useStyles = makeStyles({
 const StoryCard = (props) => {
   const classes = useStyles();
   const {start_id,title,description,date,img_url,tag} = props.element;
-  //console.log(description)
-  //console.log(start_id)
+  // console.log(data)
   const history = useHistory()
+  
   const handleCard =()=>{
+    console.log(start_id)
+
     history.push({
       pathname:`/story/${start_id}`,
       state:props.element
-    } 
-    )
+    } )
+
   }
   // { pathname: '/somewhere', state: { fromDashboard: true } } 
   return (
