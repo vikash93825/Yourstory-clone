@@ -1,6 +1,11 @@
-# YOURSTORY CLONE
+#                     YOURSTORY CLONE
 ## ABOUT PROJECT
+
+### Getting Started
+Clone the repository, Do npm install and run mock server on --port 3002
+
 ### In these Project we are cloning the YourStory website. We are providing the screenshots of our webapp below.
+
 ### Landing Page
 ![landing_yourstory_page](https://user-images.githubusercontent.com/63871069/107110601-3aace500-686f-11eb-8099-c0172c60e5e6.png)
 
@@ -12,6 +17,9 @@
 
 ### YourStory Profile
 ![yourstory_profile](https://user-images.githubusercontent.com/63871069/107110784-bce9d900-6870-11eb-8a61-f0c12048c0d3.png)
+
+### PostStory Profile
+![Screenshot (4133)](https://user-images.githubusercontent.com/61466065/107113753-f75e7080-6886-11eb-8c44-dd4c0462203c.png)
 
 ### Search Page
 ![searchPage](https://user-images.githubusercontent.com/63871069/107110818-f91d3980-6870-11eb-8e2c-41330cddc94e.png)
