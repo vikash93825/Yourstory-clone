@@ -67,4 +67,4 @@ const EditBioPage = () => {
     )
 }
 
-export default EditBioPage
+export {EditBioPage}

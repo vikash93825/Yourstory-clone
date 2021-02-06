@@ -1,24 +1,18 @@
 import React, { useState, useEffect, useRef } from "react";
-
 function removeItems(arr, item) {
   for (var i = 0; i < item; i++) {
     arr.pop();
   }
 }
-
 function useFiles({ initialState = [], maxFiles }) {
-
   const [state, setstate] = useState(initialState);
-
   function withBlobs(files) {
     const destructured = [...files];
     console.log(files);
-
     if (destructured.length > maxFiles) {
       const difference = destructured.length - maxFiles;
       removeItems(destructured, difference);
     }
-
     const blobs = destructured
       .map(file => {
         if (file.type.includes("image")) {
@@ -29,25 +23,21 @@ function useFiles({ initialState = [], maxFiles }) {
         console.log("not image");
         return null;
       })
-
       .filter(elem => elem !== null);
     setstate(blobs);
   }
   return [state, withBlobs];
 }
-
 function Upload({ onDrop, maxFiles = 1 }) {
   const [over, setover] = useState(false);
   const [files, setfiles] = useFiles({ maxFiles });
   console.log(files);
   const $input = useRef(null);
-
   useEffect(() => {
     if (onDrop) {
       onDrop(files);
     }
   }, [files]);
-
   return (
     <>
       <div
@@ -95,5 +85,4 @@ function Upload({ onDrop, maxFiles = 1 }) {
     </>
   );
 }
-
 export { Upload };

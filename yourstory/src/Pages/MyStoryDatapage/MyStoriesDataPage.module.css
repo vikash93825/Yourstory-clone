@@ -70,6 +70,12 @@
 .modalData {
   font-weight: 600;
   font-size: larger;
+  border: 1px solid red;
+  padding: 5px;
+}
+
+.modalData :hover {
+  background-color: blueviolet;
 }
 
 .paper {
@@ -93,7 +99,7 @@
 }
 
 .noStories {
-  font-size: x-large;
+  font-size: xx-large;
   margin-top: 200px;
   text-align: center;
   color: cyan;

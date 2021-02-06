@@ -16,6 +16,7 @@ import { Login } from '../Pages/Login/Login';
 import { Register } from '../Pages/Register/Register';
 import { Bookmark } from '../Pages/Bookmark/Bookmark';
 import { MyStoriesDataPage } from '../Pages/MyStoryDatapage/MyStoriesDataPage';
+import { EditBioPage } from '../Pages/EditBioPage/EditBioPage';
 
 
 const Routes = () => {
@@ -37,6 +38,7 @@ const Routes = () => {
                 <Route path = "/login" render={()=><Login/>}/>
                 <Route path = "/signup" render={()=><Register/>}/>
                 <Route path = "/bookmark" render={()=><Bookmark/>}/>
+                <Route path="/bio" render={()=><EditBioPage/>}/>
             </Switch>
             <Route path="/" render={()=><Footer/>}/>
         </div>

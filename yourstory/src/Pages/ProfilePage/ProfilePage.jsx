@@ -44,7 +44,7 @@ const ProfilePage = () => {
     }
 
     const handleGotoEditPage = () => {
-        console.log();
+        history.push("/bio")
     }
     const handleGoToBookMarksPage = () => {
         console.log();
@@ -238,9 +238,9 @@ const ProfilePage = () => {
 
             </div>
 
-            <div>
+            {/* <div>
                 <ProfileFooter />
-            </div>
+            </div> */}
         </>
     )
 }
