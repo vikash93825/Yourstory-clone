@@ -131,7 +131,7 @@ const FeaturedPage  = (props) => {
           dispatch(postStory(payload))
         console.log(payload);
         console.log(title, subtitle);
-        // history.push('/search')
+        history.push('/search')
     }
 
     

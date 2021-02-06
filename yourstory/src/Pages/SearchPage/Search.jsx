@@ -74,8 +74,6 @@ const Search = () => {
     <div>
         <div className={Styles.search}>
         <SearchBar newsData={newsData}/>
-        <button onClick={()=>handleLanguage('french')}>French</button>
-        <button onClick={()=>handleLanguage('english')}>English</button>
         </div>
       
     
