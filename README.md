@@ -32,4 +32,16 @@
 * REACT
 * REDUX
 * MATERIAL UI
-
+* DRAFT-JS
+* DRAFTJS-TO-HTML
+* HTML-TO-TEXT
+* I18next
+* i18next-browser-languagedetector
+* i18next-http-backend
+* react-draft-wysiwyg
+* react-elastic-carousel
+* react-router-dom
+* styled-components
+* JSON MOCK SERVER
+* CKEDITOR
+* html-react-parser
