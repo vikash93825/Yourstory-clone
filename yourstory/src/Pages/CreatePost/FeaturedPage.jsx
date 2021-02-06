@@ -130,8 +130,8 @@ const FeaturedPage  = (props) => {
           <Title title = {title} handleChnageTitle = {handleChnageTitle} handleKeyUpTitle = {handleKeyUpTitle} />
           <SubTitle subtitle = {subtitle} handleChnageSubTitle = {handleChnageSubTitle} handleKeyUpSubTitle = {handleKeyUpSubTitle} />
         </Grid>
-
-        <Grid xs = {12} md = {5}>
+        <Grid xs={0} md = {1} ></Grid>
+        <Grid xs = {12} sm = {7} md = {5}>
           {/* <ThumbAndBrand image = {image} handleImageChange = {handleImageChange} /> */}
           <Upload
             onDrop={ files =>handleImageChange(files) }
@@ -144,7 +144,7 @@ const FeaturedPage  = (props) => {
           <Tags tag = {tag} handleTag = {handleTag} handleTagDescription = {handleTagDescription}  />
         </Grid>
 
-        <Grid>
+        <Grid xs = {12}>
         <div className = {styles.EditBioPage}>
                 <div className = {styles.editor} >
                     <CKEditor
@@ -162,7 +162,7 @@ const FeaturedPage  = (props) => {
             </div>
         </Grid>
 
-        <Grid >
+        <Grid xs = {10} md = {4} lg = {3}>
           <UpdatedContentButton handleUpdate = {handleUpdate} handleReview = {handleReview} />
         </Grid>
       </Grid>

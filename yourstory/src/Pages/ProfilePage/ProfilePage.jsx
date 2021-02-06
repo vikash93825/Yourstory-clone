@@ -238,9 +238,9 @@ const ProfilePage = () => {
 
             </div>
 
-            <div>
+            {/* <div>
                 <ProfileFooter />
-            </div>
+            </div> */}
         </>
     )
 }

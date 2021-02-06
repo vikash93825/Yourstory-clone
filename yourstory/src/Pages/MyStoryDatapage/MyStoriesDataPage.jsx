@@ -87,7 +87,7 @@ const MyStoriesDataPage = () => {
 
   const classes = useStyles();
   const [activeStep, setActiveStep] = useState(0);
-  const [data, setData] = useState(allData)
+  const [data, setData] = useState([])
   const [open, setOpen] = React.useState(false);
 
   const handleOpen = () => {
@@ -112,7 +112,6 @@ const MyStoriesDataPage = () => {
 
   const handleStoriesRequestData = (payload) => {
       const endPoint = payload.toLowerCase()
-      console.log(endPoint);
       //make get request to get the data
 
   }
@@ -165,8 +164,8 @@ const MyStoriesDataPage = () => {
           <Grid xs= {0} md = {1}></Grid>
           {steps.map((label, index) => (
             <>
-            <Grid xs = {4} md = {2} >
-              <StepLabel className = {styles.stepperHeadings}  style = {stepLabel} onClick = { () => handleSteps(index)} key={label}><span onClick = {handleStoriesRequestData} style= {{fontSize:"22px",color:"black", textAlign:"center"}}>{label}</span></StepLabel>
+            <Grid xs = {9} md = {2} >
+              <StepLabel className = {styles.stepperHeadings}  style = {stepLabel} onClick = { () => handleSteps(index)} key={label}><span onClick = { () => handleStoriesRequestData (label)} style= {{fontSize:"22px",color:"black", textAlign:"center"}}>{label}</span></StepLabel>
             </Grid>
             </>
           ))}
