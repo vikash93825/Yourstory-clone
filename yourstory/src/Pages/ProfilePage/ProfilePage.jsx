@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import styles from "./ProfilePage.module.css"
 import Grid from "@material-ui/core/Grid"
 import CreateIcon from '@material-ui/icons/Create';
@@ -11,11 +11,19 @@ import {LinkedInBtn} from "../../Component/ProfileFolder/LinkedInBtn"
 import {TwitterBtn} from "../../Component/ProfileFolder/TwitterBtn"
 import {ProfileFooter} from "../../Component/ProfileFolder/ProfileFooter"
 import { useHistory } from 'react-router-dom';
+import { useDispatch } from "react-redux";
+import { loginData, loginOut } from "../../Redux/AuthRedux/actionCreators";
+import { Avatar } from "@material-ui/core";
 
 const ProfilePage = () => {
 
     const history = useHistory();
-
+    const dispatch = useDispatch()
+    // useEffect(()=>{
+    //     dispatch(loginData())
+    // },[])
+    const userLoggedData = JSON.parse(localStorage.getItem("loginData"))
+    console.log(userLoggedData)
     const cardData = [
         {
             "cardHeader":"Write your story",
@@ -54,7 +62,8 @@ const ProfilePage = () => {
         console.log()
     }
     const handleLogOut = () => {
-        console.log();
+        dispatch(loginOut())
+        history.push("/login");
     }
 
     return (
@@ -66,13 +75,13 @@ const ProfilePage = () => {
                 <div className = {styles.upperBackground}>
                     <Grid className ={styles.userDataDiv}>
                         <Grid xs = {1}>
-                            <img className = {styles.userImg} src="https://images.yourstory.com/cs/users/d02a52a0-4b7a-11eb-b2f0-b1bf6c34fbf6/profile_image_1609427641586.jpg" alt = "user image" />
+                            <Avatar className = {styles.userImg} src={userLoggedData.avatar_img} alt = {userLoggedData.username} />
                         </Grid>
                         <Grid className = {styles.table} xs = {3}>
                             <table>
                                 <tbody>
-                                    <tr><td className = {styles.name}>Chandra Mouli</td></tr>
-                                    <tr><td className = {styles.email}>mouliofficial98@gmail.com</td></tr>
+                                    <tr><td className = {styles.name}> {userLoggedData.username}</td></tr>
+                                    <tr><td className = {styles.email}> {userLoggedData.email}</td></tr>
                                     <tr><td className = {styles.editProfile} onClick = {handleEditProfile}>edit profile</td></tr>
                                 </tbody>
                             </table>
@@ -159,11 +168,11 @@ const ProfilePage = () => {
                         <Grid xs = {10} md = {4}>
                             <div className = {styles.displayFlexaddingLeft50}>
                                 <div className = {styles.usersocialLeftSection} >
-                                    <p className = {styles.userNameHeader}>Chandra Mouli</p>
+                                    <p className = {styles.userNameHeader}> {userLoggedData.username}</p>
                                     <p className = {styles.editProfile}>(disconect)</p>
                                 </div>
                                 <div>
-                                <img className = {styles.userImgSocial} src="https://images.yourstory.com/cs/users/d02a52a0-4b7a-11eb-b2f0-b1bf6c34fbf6/profile_image_1609427641586.jpg" alt = "user image" />
+                                <Avatar className = {styles.userImgSocial} src={ userLoggedData.avatar_img} alt =  {userLoggedData.username} />
                                 </div>
                             </div>
                         </Grid>

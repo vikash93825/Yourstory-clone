@@ -8,6 +8,14 @@
       "password": "123",
       "avatar_url": "",
       "bio": "hello masai"
+    },
+    {
+      "id": "e20d2a6f-db6f-4620-9117-fda672505f2a",
+      "email": "vikashkumar@gmail.com",
+      "username": "vikashkk",
+      "password": "456",
+      "avatar_img": "",
+      "bio": ""
     }
   ],
   "sources": [
