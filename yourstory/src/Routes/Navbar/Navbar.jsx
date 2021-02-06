@@ -5,7 +5,10 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import {useDispatch} from 'react-redux'
+import { fetchLanguageData } from '../../Redux/DataRedux/actionCreator';
 
 const useStyles = makeStyles((theme) => ({
     hr:{
@@ -73,6 +76,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Navbar() {
+    const dispatch = useDispatch();
+    const { t, i18n } = useTranslation();
+
+    const handleClick = (lang) => {
+      i18n.changeLanguage(lang);
+        dispatch(fetchLanguageData(lang))
+    }
+
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);

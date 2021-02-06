@@ -125,3 +125,105 @@ export const fetchFilteredData = (params) => dispatch => {
             dispatch( fetchFilteredDataFailure( err) )
         })
   }
+
+
+export const fetchLanguageData = (lang) => dispatch => {
+    console.log('fetchLanguageData',lang);
+    if(lang === 'english'){
+      dispatch(fetchSourceData())
+      return 
+    }
+    var language = 'en';
+
+    if(lang === 'fr'){
+      language = "french"
+    }
+    if(lang === 'de'){
+      language = 'german'
+    }
+    if(lang === 'en'){
+      return dispatch(fetchSourceData())
+    }
+
+    console.log(language)
+    dispatch(filterByLanguage());
+      let config = {
+          method: 'GET',
+          url: 'http://localhost:3002/sources/',
+      }
+
+      return axios( config )
+      .then( res => {
+        console.log(res)
+        console.log(language)
+        console.log(res.data.map(item=>item[language]));
+          dispatch( filterByLanguageSuccess( res.data.map(item=>item[language])))
+      })
+      .catch( err => {
+              console.log( "fetch")
+              dispatch( filterByLanguageFailure( err) )
+          })
+}
+
+export const postStory = (payload) => dispatch => {
+  console.log(payload)
+  return axios({
+    method: 'POST',
+    url: 'http://localhost:3002/sources/',
+    data: payload
+  })
+  // .then(res => dispatch(postStorySuccess(res)))
+  // .catch(err => dispatch(postStoryFailure(err)))
+}
+
+export const postBookMarkReq = (payload)=>({
+  type:BOOKMARK_REQUEST,
+  payload
+})
+
+export const postBookMarkSuccess = (payload)=>({
+  type:BOOKMARK_SUCCESS,
+  payload
+})
+
+export const postBookMarkFailure = (payload)=>({
+  type:BOOKMARK_FAILURE,
+  payload
+})
+
+export const postBookMarkData = (payload)=>(dispatch)=>{
+  dispatch(postBookMarkReq())
+  axios({
+    method:"post",
+    url:"http://localhost:3002/bookmark",
+    data:payload
+  })
+  .then(res=>dispatch(postBookMarkSuccess({message:"bookmark added"})))
+  .catch(err=>dispatch(postBookMarkFailure({message:"error"})))
+}
+
+
+export const getBookMarkReq = (payload)=>({
+  type:GET_BOOKMARK_REQUEST,
+  payload
+})
+
+export const getBookMarkSuccess = (payload)=>({
+  type:GET_BOOKMARK_SUCCESS,
+  payload
+})
+
+export const getBookMarkFailure = (payload)=>({
+  type:GET_BOOKMARK_FAILURE,
+  payload
+})
+
+export const getBookMarkData = (payload)=>(dispatch)=>{
+  dispatch(getBookMarkReq())
+  axios({
+    method:"get",
+    url:"http://localhost:3002/bookmark",
+  })
+  .then(res=>dispatch(getBookMarkSuccess(res.data)))
+  .catch(err=>dispatch(getBookMarkFailure({message:"error"})))
+}

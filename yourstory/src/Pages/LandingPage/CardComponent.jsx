@@ -29,44 +29,35 @@ const useStyles = makeStyles((theme) => ({
         },
     }));
 
-    
-
-export const CardComponent=({img_url}) =>{
+export const CardComponent=({start_id,img_url, description, category,title}) =>{
     const classes = useStyles();
     return (
-        <div className={classes.root}>
-            {/* <Grid item container >
-                <Grid xs={12} md={6} lg={3}>
-                    {/* {[0, 1, 2, 3].map((value) => (
-                        <Grid key={value} item>
-                        <Paper className={classes.paper}> */}
-                            <Card className={classes.root}>
-                                <CardActionArea>
-                                <CardMedia
-                                    className={classes.media}
-                                    image={img_url}
-                                    title="Contemplative Reptile"
-                                />
-                                <CardContent>
-                                    <Typography gutterBottom variant="p" component="p" style={{}}>
-                                    02/02/2021
-                                    </Typography>
-                                    <Typography variant="body2" color="textSecondary" component="p">
-                                    Budget 2021 positions India towards its target of $5T economy: USISPF
-                                    </Typography>
-                                </CardContent>
-                                </CardActionArea>
-                                <CardActions>
-                                <Button size="small" color="secondry" style={{color:"#f23f2d",background:"#fff5f4"}}>
-                                    UNION BUDGET
-                                </Button>
-                                </CardActions>
-                            </Card>
-                        {/* </Paper>
-                        </Grid>
-                    ))} */}
-                    {/* </Grid>
-                </Grid> */}
+        <div className={classes.root} onClick={handleClick}>
+            <Card className={classes.root}>
+                <CardActionArea>
+                    <CardMedia
+                        className={classes.media}
+                        image={img_url}
+                        title="Contemplative Reptile"
+                    />
+
+                    <CardContent>
+                    <Typography gutterBottom variant="p" component="p" style={{}}>
+                        02/02/2021
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary" component="p">
+                        {title}
+                    </Typography>
+                    </CardContent>
+                    
+                </CardActionArea>
+
+                <CardActions>
+                    <Button size="small" color="secondry" style={{color:"#f23f2d",background:"#fff5f4"}}>
+                        {category}
+                    </Button>
+                </CardActions>
+            </Card>
         </div>
     );
 }

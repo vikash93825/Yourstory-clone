@@ -48,8 +48,10 @@ const LandingPage = () => {
         //dispatch(categoryParams())
     }, []);
 
-    
-
+    //getting source data from database
+    const source = useSelector(state => state.app.source)
+    const unionBudget = source.filter((item)=> item.category == "unionBudget")
+    console.log(unionBudget);
     return (
         <div>
         <Grid container>
@@ -95,15 +97,7 @@ const LandingPage = () => {
                 </Grid>
             </Grid>
         </Grid>
-        {/* {
-            category.map((item)=> <BottomCard {...item} /> )
-        } */}
         <BottomCard/>
-        
-        {/* <BottomCard/>
-        <BottomCard/>
-        <BottomCard/>
-        <BottomCard/> */}
         
     </div>
     );

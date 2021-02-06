@@ -6,7 +6,7 @@ import {fetchSourceData} from '../../Redux/DataRedux/actionCreator'
 import SideCard from './SideCard'
 import CardComponent from './CardComponent'
 import styles from './LandingPage.module.css'
-//import Carousel from 'react-elastic-carousel'
+import Carousel from 'react-elastic-carousel'
 
 import {
     Card,
@@ -19,6 +19,8 @@ import {
     Grid,
 } from "@material-ui/core";
 import BottomCard from './BottomCard';
+//import {Carousal} from './Carousal';
+import YourstoryTv from '../YourstoryTv/YourstoryTv';
 
 const useStyles = makeStyles({
     root: {
@@ -40,13 +42,17 @@ const useStyles = makeStyles({
 const SmbPage = () => {
     const classes = useStyles();
     const dispatch = useDispatch()
+    
     useEffect(() => {
         dispatch(fetchSourceData())
     }, []);
 
-    const source = useSelector(state => state.source)
-    console.log(source)
+    //getting source data from database
+    const source = useSelector(state => state.app.source)
+    const unionBudget = source.filter((item)=> item.category == "unionBudget")
 
+    const interview = source.filter((item)=> item.category == "interview")
+    console.log(unionBudget);
     return (
         <div>
         <Grid container>
@@ -92,12 +98,9 @@ const SmbPage = () => {
                 </Grid>
             </Grid>
         </Grid>
-
-        <BottomCard/>
-        <BottomCard/>
-        <BottomCard/>
-        <BottomCard/>
-        <BottomCard/>
+        {
+            interview.reverse().map((item)=> <BottomCard {...item} /> )
+        }
     </div>
     );
 }
