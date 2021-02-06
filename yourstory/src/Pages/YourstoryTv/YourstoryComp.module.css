@@ -1,20 +1,12 @@
 .main {
-    padding: 2% 5% 0 5%;
-    
-
-}
-
-@media only screen and (max-width: 600px) {
-    .com{
-        height: 50%;
-    }
+    padding: 20px 100px 0 100px;
 }
 
 .money{
-    padding: 1% 3% 0 3%;
+    padding: 20px 100px 0 100px;
     display: flex;
 }
 
 .money > * {
-    margin-left: 2%;
+    margin-left: 20px;
 }

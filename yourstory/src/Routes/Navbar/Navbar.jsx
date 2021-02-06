@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { fade, makeStyles } from '@material-ui/core/styles';
-import {Select, Menu, MenuItem, Badge, Typography, IconButton, Toolbar, AppBar, Hidden} from '@material-ui/core'
+import {Select, Menu, MenuItem, Badge, Typography, IconButton, Toolbar, AppBar} from '@material-ui/core'
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
@@ -166,29 +166,23 @@ export default function Navbar() {
             <Typography style={{color:"#212121"}} variant="h8" noWrap>
                 <Link to="/" className={classes.link}>YourStory</Link>
             </Typography>
-
             <Typography variant="h8" style={{color:"#212121"}} noWrap>
-            <Hidden smDown>  YourStory Club</Hidden>
+            YourStory Club
             </Typography>
-
             <Typography variant="h8" style={{color:"#212121"}} noWrap>
             <Link to="/videos" className={classes.link}>YourStory TV</Link>
             </Typography>
-
             <Typography variant="h8" style={{color:"#212121"}} noWrap>
-            <Hidden smDown> <Link to="/herstory" className={classes.link}>HerStory</Link></Hidden>
+            <Link to="/herstory" className={classes.link}>HerStory</Link>
             </Typography>
-
             <Typography className={classes.title} variant="h8" style={{color:"#212121"}} noWrap>
-            <Hidden smDown> <Link to="/socialstory" className={classes.link}>SocialStory</Link></Hidden>
+            <Link to="/socialstory" className={classes.link}>SocialStory</Link>
             </Typography>
-
             <Typography className={classes.title} variant="h8" style={{color:"#212121"}} noWrap>
-            <Hidden smDown> <Link to="/smbstory" className={classes.link}>SMBStory</Link></Hidden>
+            <Link to="/smbstory" className={classes.link}>SMBStory</Link>
             </Typography>
-
             <Typography className={classes.title} variant="h8" style={{color:"#212121"}} noWrap>
-            <Hidden smDown> More</Hidden>
+            More
             </Typography>
             
             <div className={classes.grow} />
@@ -196,15 +190,23 @@ export default function Navbar() {
                 <IconButton aria-label="show 4 new mails" color="inherit">
                 <Badge style={{color:"#bf360c"}}>
                     <Select
+                        // labelId="demo-controlled-open-select-label"
+                        // id="demo-controlled-open-select"
+                        // open={open}
+                        // onClose={handleClose}
+                        // onOpen={handleOpen}
+                        // value={age}
+                        // onChange={handleChange}
                         disabled={!isOver}
                         onMouseEnter={onEnter}
                         onMouseLeave={onLeave}
                         >
                         <MenuItem value="">
-                            <em>English</em>
+                            <em>None</em>
                         </MenuItem>
-                        <MenuItem value={10}>French</MenuItem>
-                        <MenuItem value={20}>German</MenuItem>
+                        <MenuItem value={10}>Ten</MenuItem>
+                        <MenuItem value={20}>Twenty</MenuItem>
+                        <MenuItem value={30}>Thirty</MenuItem>
                     </Select>
                 </Badge>
                 </IconButton>
