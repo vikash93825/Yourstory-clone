@@ -21,7 +21,7 @@ const Story = () =>{
         console.log("bookmark")
         dispatch(postBookMarkData(storyData))
     }
-
+    console.log(storyData)
     return(
         <div className={styles.main}>
         <div>
@@ -57,7 +57,7 @@ const Story = () =>{
                     <div className={styles.story}>
                         <p>Story</p>
                         <hr/>
-                        <p className={styles.desc}>{storyData.description}</p>
+                        <p className={styles.desc}>{storyData.descrition}</p>
                     </div>
                 </div>
             </div>
