@@ -1245,6 +1245,55 @@
         "user_id": 2
       },
       "id": 8
+    },
+    {
+      "start_id": "08c57dde-b087-4f82-9643-c397b4063973",
+      "title": "Market veteran Raamdeo Agrawal is betting on this sector for Budget 2021",
+      "subtitle": "Motilal Oswal Financial Services Co-founder and Chairman, Raamdeo Agrawal, a stock market veteran of 35 years, believes Budget 2021 ‘won’t be disappointing’.\n\n",
+      "descrition": "When Finance Minister Nirmala Sitharaman presents Budget 2021, she is expected to outline the Indian economy’s post-pandemic recovery plan. The coronavirus crisis wreaked havoc on India’s economy which slipped into recession; millions of Indians lost their jobs.",
+      "img_url": "https://images.yourstory.com/cs/2/25e9e0e0605211e984534d4121ad4bb6/Image24ne-1611830938099.jpg?fm=png&auto=format&ar=2:1&mode=crop&crop=face",
+      "tag": "interview",
+      "brand": "MyStory",
+      "date": "06/02/2021",
+      "language": "en",
+      "authors": "yourstory",
+      "category": "interview",
+      "country": "us",
+      "like": 6,
+      "user_id": 2,
+      "french": {
+        "start_id": "49f2c357-7cf8-4dce-95e1-a7442cde23ba",
+        "title": "Le vétéran du marché Raamdeo Agrawal parie sur ce secteur pour le budget 2021",
+        "subtitle": "Le co-fondateur et président de Motilal Oswal Financial Services, Raamdeo Agrawal, un vétéran de la bourse depuis 35 ans, estime que le budget 2021 «ne sera pas décevant».",
+        "descrition": "Lorsque la ministre des Finances, Nirmala Sitharaman, présentera le budget 2021, elle devrait présenter le plan de relance post-pandémie de l’économie indienne. La crise des coronavirus a fait des ravages dans l’économie indienne qui est entrée en récession; des millions d'Indiens ont perdu leur emploi.",
+        "img_url": "https://images.yourstory.com/cs/2/25e9e0e0605211e984534d4121ad4bb6/Image24ne-1611830938099.jpg?fm=png&auto=format&ar=2:1&mode=crop&crop=face",
+        "tag": "interview",
+        "brand": "MyStory",
+        "date": "06/02/2021",
+        "language": "fr",
+        "authors": "yourstory",
+        "category": "interview",
+        "country": "us",
+        "like": 6,
+        "user_id": 2
+      },
+      "german": {
+        "start_id": "bc110869-cda6-4812-b868-b79dc20ace22",
+        "title": "Der Marktveteran Raamdeo Agrawal setzt für den Haushalt 2021 auf diesen Sektor",
+        "subtitle": "Raamdeo Agrawal, Mitbegründer und Vorsitzender von Motilal Oswal Financial Services, ein 35-jähriger Börsenveteran, ist der Ansicht, dass das Budget 2021 „nicht enttäuschend sein wird“.",
+        "descrition": "enn Finanzministerin Nirmala Sitharaman den Haushalt 2021 vorlegt, wird sie voraussichtlich den Plan für die Erholung der indischen Wirtschaft nach der Pandemie skizzieren. Die Coronavirus-Krise hat die indische Wirtschaft verwüstet und ist in eine Rezession gerutscht. Millionen von Indern verloren ihre Arbeit",
+        "img_url": "https://images.yourstory.com/cs/2/25e9e0e0605211e984534d4121ad4bb6/Image24ne-1611830938099.jpg?fm=png&auto=format&ar=2:1&mode=crop&crop=face",
+        "tag": "interview",
+        "brand": "MyStory",
+        "date": "06/02/2021",
+        "language": "fr",
+        "authors": "yourstory",
+        "category": "interview",
+        "country": "us",
+        "like": 6,
+        "user_id": 2
+      },
+      "id": 14
     }
   ]
 }
