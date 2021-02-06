@@ -1,0 +1,34 @@
+.paddingLeft {
+  padding-left: 20px;
+}
+
+.updateBtn {
+  padding: 10px;
+  margin: 10px;
+  margin-left: 0px;
+  padding-left: 0px;
+  border-radius: 5px;
+  background-color: rgba(170, 64, 22, 0.74);
+  color: white;
+}
+
+.reviewBtn {
+  padding: 10px;
+  margin: 10px;
+  margin-right: 1px;
+  border-radius: 5px;
+  /* border-top-left-radius: 5px; */
+  /* border-bottom-left-radius: 5px; */
+  background-color: rgb(170, 106, 230);
+  color: white;
+}
+
+.upArrowBtn {
+  padding: 10px;
+  margin: 10px;
+  margin-left: 0px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: white;
+  background-color: rgb(170, 106, 230);
+}

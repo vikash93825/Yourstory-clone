@@ -1,0 +1,30 @@
+.displayFlex {
+  display: flex;
+  padding-left: 10px;
+}
+.tagSelect {
+  min-width: 150px;
+  max-width: 850px;
+  padding: 10px;
+}
+.addTagBtn {
+  margin: 10px;
+  padding-top: 25px;
+}
+.margin10 {
+  margin: 10px;
+}
+.titleSvg {
+  width: 15px;
+}
+.titleSvg :hover {
+  cursor: pointer;
+}
+.tagbtn {
+  padding: 5px;
+  color: red;
+}
+.tagbtn :hover {
+  color: white;
+  background-color: rgb(207, 4, 4);
+}

@@ -1,0 +1,28 @@
+.search{
+    background-color: #3e485b;
+    width: 100%;
+    height:25vh;
+    padding-top:40px ;
+    text-align: center;
+}
+
+.brand{
+    border-radius: 20px;
+    background-color:#ffffff;
+    outline: none;
+    color: #3e485b;
+    border: 1px solid black;
+    margin: 5px;
+    padding: 5px;
+    font-size: 12.8px;
+    line-height: normal;
+    letter-spacing: start;
+}
+
+.author{
+    font-size:13.6px;
+    line-height: normal;
+    text-align: start;
+    letter-spacing: normal;
+    color: #000000;
+}

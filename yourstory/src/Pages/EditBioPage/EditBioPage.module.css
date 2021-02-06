@@ -1,0 +1,37 @@
+.myBioHeader {
+  padding: 10px;
+  display: flex;
+  /* padding-left: 85px; */
+  background-color: #ed1c4a;
+  color: white;
+  font-weight: 700;
+  font-size: large;
+}
+
+.bioStyle {
+  padding-left: 5px;
+}
+
+.EditBioPage {
+  margin: 5em;
+}
+
+.editor {
+  margin-right: 10em;
+  border: 1px solid cyan;
+}
+
+.ck-editor__editable_inline {
+  min-height: 10vh;
+}
+
+.savBtn {
+  margin-top: 20px;
+  outline: none;
+  border: none;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+  background-color: #b00b05;
+  margin-bottom: 10px;
+}
