@@ -34,12 +34,17 @@ Clone the repository, Do npm install and run mock server on --port 3002
 ### German Page
 ![german page](https://user-images.githubusercontent.com/63871069/107110900-8496ca80-6871-11eb-9b65-8fa914069bdf.png)
 
-### TECH STACK USED
+
+### TECH STACK USED:
 * HTML
 * CSS
-* REACT
-* REDUX
-* MATERIAL UI
+* Javascript
+* React JS
+
+### TECH LIBRARY USED:
+* React App
+* Redux
+* Material UI
 * DRAFT-JS
 * DRAFTJS-TO-HTML
 * HTML-TO-TEXT
