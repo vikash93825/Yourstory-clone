@@ -6,6 +6,7 @@ import SideCard from './SideCard'
 import CardComponent from './CardComponent'
 import styles from './LandingPage.module.css'
 import BottomCard from './BottomCard';
+import {Link} from 'react-router-dom'
 
 import HeadingContent from './HeadingContent';
 import { Card,CardActionArea,CardActions,CardContent,CardMedia,Button,Typography,Grid } from "@material-ui/core";
