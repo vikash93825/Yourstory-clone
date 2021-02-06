@@ -8,14 +8,14 @@ const Bookmark = () =>{
     const dispatch = useDispatch()
     useEffect(()=>{
         dispatch(getBookMarkData())
-    })
+    },[])
     const bookMarkData = useSelector(state=>state.app.bookmarkData)
     return(
-        <Container maxWidth="sm">
+        <Container maxWidth="sm" >
             {
                 bookMarkData && bookMarkData?.map(item=>{
                     return(
-                        <div key={item.start_id}>
+                        <div key={item.start_id} style={{display: "flex", margin: "30px"}}>
                             <StoryCard element={item}/>
                         </div>
                     )
