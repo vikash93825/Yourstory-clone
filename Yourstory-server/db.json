@@ -1188,6 +1188,55 @@
         "user_id": 2
       },
       "id": 13
+    },
+    {
+      "start_id": "9d57d86a-4688-477f-bc42-1455a350a0bb",
+      "title": "Budget 2021: Healthcare industry welcomes increased allocation, focus on infrastructure",
+      "subtitle": "The 137 percent increase in healthcare budget allocation this year, especially the COVID-19 specific funds, has been warmly welcomed by healthcare players.",
+      "descrition": "<p>While presenting the Union Budget 2021 on Monday, the FM proposed allocation of Rs 2,83,846 lakh crore for the healthcare and wellness sector. This also includes Rs 35,000 crore for COVID-19 vaccines, which are being rolled out across the country since January 2021.</p>",
+      "img_url": "https://images.yourstory.com/cs/2/3fb20ae02dc911e9af58c17e6cc3d915/hopitality-1612328274807.png?fm=png&auto=format&ar=2:1&mode=crop&crop=face",
+      "tag": "unionBudget",
+      "brand": "MyStory",
+      "date": "06/02/2021",
+      "language": "en",
+      "authors": "yourstory",
+      "category": "unionBudget",
+      "country": "us",
+      "like": 6,
+      "user_id": 2,
+      "french": {
+        "start_id": "2373fae6-252e-4f75-bf2e-0ceecc7ba3de",
+        "title": "Budget 2021: Le secteur des soins de santé accueille favorablement une allocation accrue, se concentre sur l'infrastructure",
+        "subtitle": "L'augmentation de 137% de l'allocation budgétaire de la santé cette année, en particulier des fonds spécifiques au COVID-19, a été chaleureusement accueillie par les acteurs de la santé.",
+        "descrition": "<p>While presenting the Union Budget 2021 on Monday, the FM proposed allocation of Rs 2,83,846 lakh crore for the healthcare and wellness sector. This also includes Rs 35,000 crore for COVID-19 vaccines, which are being rolled out across the country since January 2021.</p>",
+        "img_url": "https://images.yourstory.com/cs/2/3fb20ae02dc911e9af58c17e6cc3d915/hopitality-1612328274807.png?fm=png&auto=format&ar=2:1&mode=crop&crop=face",
+        "tag": "unionBudget",
+        "brand": "MyStory",
+        "date": "06/02/2021",
+        "language": "fr",
+        "authors": "yourstory",
+        "category": "unionBudget",
+        "country": "us",
+        "like": 6,
+        "user_id": 2
+      },
+      "german": {
+        "start_id": "b32e6412-3d3e-4ebe-b253-0a41cd288f90",
+        "title": "Budget 2021: Die Gesundheitsbranche begrüßt eine verstärkte Allokation und konzentriert sich auf die Infrastruktur",
+        "subtitle": "Die 137-prozentige Erhöhung der Mittelzuweisung für das Gesundheitswesen in diesem Jahr, insbesondere für die COVID-19-spezifischen Fonds, wurde von den Akteuren des Gesundheitswesens sehr begrüßt.",
+        "descrition": "<p>While presenting the Union Budget 2021 on Monday, the FM proposed allocation of Rs 2,83,846 lakh crore for the healthcare and wellness sector. This also includes Rs 35,000 crore for COVID-19 vaccines, which are being rolled out across the country since January 2021.</p>",
+        "img_url": "https://images.yourstory.com/cs/2/3fb20ae02dc911e9af58c17e6cc3d915/hopitality-1612328274807.png?fm=png&auto=format&ar=2:1&mode=crop&crop=face",
+        "tag": "unionBudget",
+        "brand": "MyStory",
+        "date": "06/02/2021",
+        "language": "fr",
+        "authors": "yourstory",
+        "category": "unionBudget",
+        "country": "us",
+        "like": 6,
+        "user_id": 2
+      },
+      "id": 8
     }
   ]
 }
