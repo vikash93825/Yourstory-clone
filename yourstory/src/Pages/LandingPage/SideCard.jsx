@@ -25,7 +25,7 @@ const useStyles = makeStyles({
 });
 
 
-const SideCard = ({start_id,img_url, description, category}) => {
+const SideCard = ({start_id,img_url, description, category,title}) => {
     const classes = useStyles();
     const history = useHistory()
     
@@ -39,7 +39,7 @@ const SideCard = ({start_id,img_url, description, category}) => {
                     <img src={img_url} style={{borderRadius:"5px"}} width="90px" height="80px" />    
                 </div>
                 
-                <Typography variant="body2" color="textSecondary" component="p">{description}
+                <Typography variant="body2" color="textSecondary" component="p">{title}
                 <Button size="small" color="secondry" style={{color:"#f23f2d",background:"#fff5f4"}}>
                     {category}
                 </Button>

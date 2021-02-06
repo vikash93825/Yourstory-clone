@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
         },
     }));
 
-export const CardComponent=({start_id,img_url, description, category}) =>{
+export const CardComponent=({start_id,img_url, description, category,title}) =>{
     const classes = useStyles();
     const history = useHistory()
     const handleClick=()=>{
@@ -41,7 +41,7 @@ export const CardComponent=({start_id,img_url, description, category}) =>{
                         02/02/2021
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                        {description}
+                        {title}
                     </Typography>
                     </CardContent>
                     

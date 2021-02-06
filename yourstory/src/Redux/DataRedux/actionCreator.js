@@ -184,18 +184,31 @@ export const fetchLanguageData = (lang) => dispatch => {
       dispatch(fetchSourceData())
       return 
     }
+    var language = 'en';
+
+    if(lang === 'fr'){
+      language = "french"
+    }
+    if(lang === 'de'){
+      language = 'german'
+    }
+    if(lang === 'en'){
+      return dispatch(fetchSourceData())
+    }
+
+    console.log(language)
     dispatch(filterByLanguage());
       let config = {
           method: 'GET',
           url: 'http://localhost:3002/sources/',
-          data: {
-              lang
-          },
       }
+
       return axios( config )
       .then( res => {
-        console.log(res.data.map(item=>item[lang]));
-          dispatch( filterByLanguageSuccess( res.data.map(item=>item[lang])))
+        console.log(res)
+        console.log(language)
+        console.log(res.data.map(item=>item[language]));
+          dispatch( filterByLanguageSuccess( res.data.map(item=>item[language])))
       })
       .catch( err => {
               console.log( "fetch")
