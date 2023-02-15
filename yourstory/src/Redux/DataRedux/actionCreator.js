@@ -18,30 +18,28 @@ import {
   BOOKMARK_FAILURE,
   GET_BOOKMARK_FAILURE,
   GET_BOOKMARK_REQUEST,
-  GET_BOOKMARK_SUCCESS
-} 
-from "./actionTypes";
+  GET_BOOKMARK_SUCCESS,
+} from "./actionTypes";
 
 export const fetchSourceRequest = () => {
-  console.log("fetch Source Request");
   return {
     type: FETCH_SOURCE_REQUEST,
   };
 };
 
-export const fetchSourceSuccess = payload => {
-  console.log("fetch Source Success",payload);
+export const fetchSourceSuccess = (payload) => {
+  console.log("fetch Source Success", payload);
   return {
     type: FETCH_SOURCE_SUCCESS,
-    payload
+    payload,
   };
 };
 
-export const fetchSourceFailure = error => {
-  console.log("fetch Source Failure",error);
+export const fetchSourceFailure = (error) => {
+  console.log("fetch Source Failure", error);
   return {
     type: FETCH_SOURCE_FAILURE,
-    error
+    error,
   };
 };
 
@@ -52,229 +50,230 @@ export const fetchFilteredDataRequest = () => {
   };
 };
 
-export const fetchFilteredDataSuccess = payload => {
-  console.log("fetch FILTERED_DATA Success",payload);
+export const fetchFilteredDataSuccess = (payload) => {
+  console.log("fetch FILTERED_DATA Success", payload);
   return {
     type: FETCH_FILTERED_DATA_SUCCESS,
-    payload
+    payload,
   };
 };
 
-export const fetchFilteredDataFailure = error => {
-  console.log("fetch FILTERED_DATA Failure",error);
+export const fetchFilteredDataFailure = (error) => {
+  console.log("fetch FILTERED_DATA Failure", error);
   return {
     type: FETCH_FILTERED_DATA_FAILURE,
-    error
+    error,
   };
 };
 
-export const filterBySearch = payload => {
-  console.log("FILTERBYSEARCH",payload);
+export const filterBySearch = (payload) => {
+  console.log("FILTERBYSEARCH", payload);
   return {
     type: FILTERBYSEARCH,
-    payload
+    payload,
   };
 };
 
-export const filterByLanguage = payload => {
-  console.log("FILTERBYLANGUAGE",payload);
+export const filterByLanguage = (payload) => {
+  console.log("FILTERBYLANGUAGE", payload);
   return {
     type: FILTERBYLANGUAGEREQUEST,
-    payload
+    payload,
   };
 };
 
-export const filterByLanguageSuccess = payload => {
-  console.log("FILTERBYLANGUAGESUCCESS",payload);
+export const filterByLanguageSuccess = (payload) => {
+  console.log("FILTERBYLANGUAGESUCCESS", payload);
   return {
     type: FILTERBYLANGUAGESUCCESS,
-    payload
+    payload,
   };
 };
 
-export const filterByLanguageFailure = payload => {
-  console.log("FILTERBYLANGUAGEFAILURE",payload);
+export const filterByLanguageFailure = (payload) => {
+  console.log("FILTERBYLANGUAGEFAILURE", payload);
   return {
     type: FILTERBYLANGUAGEFAILURE,
-    payload
+    payload,
   };
 };
 
-export const postStorySuccess = payload => {
-  console.log("POSTSTORYSUCCESS",payload);
+export const postStorySuccess = (payload) => {
+  console.log("POSTSTORYSUCCESS", payload);
   // return {
   //   type: POSTSTORYSUCCESS,
   //   payload
   // };
 };
 
-export const postStoryFailure = payload => {
-  console.log("POSTSTORYFAILURE",payload);
+export const postStoryFailure = (payload) => {
+  console.log("POSTSTORYFAILURE", payload);
   // return {
   //   type: POSTSTORYFAILURE,
   //   payload
   // };
 };
 
-export const fetchSourceData = () => dispatch => {
-  console.log('fetchSourceData');
+export const fetchSourceData = () => (dispatch) => {
   dispatch(fetchSourceRequest());
-  
+
   return axios
-  .get(`http://localhost:3002/sources`)
-  .then(res => {
-    console.log("response success", res.data);
-    dispatch(fetchSourceSuccess(res.data));
-  })
-  .catch(err => dispatch(fetchSourceFailure(err)));
-}
+    .get(`https://yourstory-server.vercel.app/sources`)
+    .then((res) => {
+      console.log("response success", res);
+      dispatch(fetchSourceSuccess(res.data));
+    })
+    .catch((err) => dispatch(fetchSourceFailure(err)));
+};
 
 const categoryParams = (params) => {
-  var categoryArr = []
-  var s = params.map((item) => item.key === "category" && categoryArr.push(item.value))
-  return categoryArr
-}
+  var categoryArr = [];
+  var s = params.map(
+    (item) => item.key === "category" && categoryArr.push(item.value)
+  );
+  return categoryArr;
+};
 
 const tagParams = (params) => {
-  var tagArr = []
-  var s = params.map((item) => item.key === "tag" && tagArr.push(item.value))
-  return tagArr
-}
+  var tagArr = [];
+  var s = params.map((item) => item.key === "tag" && tagArr.push(item.value));
+  return tagArr;
+};
 
 const authorParams = (params) => {
-  var authorArr = []
-  var s = params.map((item) => item.key === "authors" && authorArr.push(item.value))
-  return authorArr
-}
+  var authorArr = [];
+  var s = params.map(
+    (item) => item.key === "authors" && authorArr.push(item.value)
+  );
+  return authorArr;
+};
 
-export const fetchFilteredData = (params) => dispatch => {
-  console.log('fetchFilteredData',params);
-  
+export const fetchFilteredData = (params) => (dispatch) => {
+  console.log("fetchFilteredData", params);
+
   dispatch(fetchFilteredDataRequest());
 
-    let category = categoryParams(params)
-    let tag = tagParams(params)
-    let authors = authorParams(params)
+  let category = categoryParams(params);
+  let tag = tagParams(params);
+  let authors = authorParams(params);
 
-    let config = {
-        method: 'GET',
-        url: 'http://localhost:3002/sources',
-        params: {
-            category,
-            tag,
-            authors
-        },
-    }
-    
-    return axios( config )
-    .then( res => {
+  let config = {
+    method: "GET",
+    url: "https://yourstory-server.vercel.app/sources",
+    params: {
+      category,
+      tag,
+      authors,
+    },
+  };
+
+  return axios(config)
+    .then((res) => {
       console.log(res);
-        dispatch( fetchFilteredDataSuccess( res.data ) )
+      dispatch(fetchFilteredDataSuccess(res.data));
     })
-    .catch( err => {
-            console.log( "fetch")
-            dispatch( fetchFilteredDataFailure( err) )
-        })
+    .catch((err) => {
+      console.log("fetch");
+      dispatch(fetchFilteredDataFailure(err));
+    });
+};
+
+export const fetchLanguageData = (lang) => (dispatch) => {
+  console.log("fetchLanguageData", lang);
+  if (lang === "english") {
+    dispatch(fetchSourceData());
+    return;
+  }
+  var language = "en";
+
+  if (lang === "fr") {
+    language = "french";
+  }
+  if (lang === "de") {
+    language = "german";
+  }
+  if (lang === "en") {
+    return dispatch(fetchSourceData());
   }
 
+  console.log(language);
+  dispatch(filterByLanguage());
+  let config = {
+    method: "GET",
+    url: "https://yourstory-server.vercel.app/sources",
+  };
 
-export const fetchLanguageData = (lang) => dispatch => {
-    console.log('fetchLanguageData',lang);
-    if(lang === 'english'){
-      dispatch(fetchSourceData())
-      return 
-    }
-    var language = 'en';
+  return axios(config)
+    .then((res) => {
+      console.log(res);
+      console.log(language);
+      console.log(res.data.map((item) => item[language]));
+      dispatch(filterByLanguageSuccess(res.data.map((item) => item[language])));
+    })
+    .catch((err) => {
+      console.log("fetch");
+      dispatch(filterByLanguageFailure(err));
+    });
+};
 
-    if(lang === 'fr'){
-      language = "french"
-    }
-    if(lang === 'de'){
-      language = 'german'
-    }
-    if(lang === 'en'){
-      return dispatch(fetchSourceData())
-    }
-
-    console.log(language)
-    dispatch(filterByLanguage());
-      let config = {
-          method: 'GET',
-          url: 'http://localhost:3002/sources/',
-      }
-
-      return axios( config )
-      .then( res => {
-        console.log(res)
-        console.log(language)
-        console.log(res.data.map(item=>item[language]));
-          dispatch( filterByLanguageSuccess( res.data.map(item=>item[language])))
-      })
-      .catch( err => {
-              console.log( "fetch")
-              dispatch( filterByLanguageFailure( err) )
-          })
-}
-
-export const postStory = (payload) => dispatch => {
-  console.log(payload)
+export const postStory = (payload) => (dispatch) => {
+  console.log(payload);
   return axios({
-    method: 'POST',
-    url: 'http://localhost:3002/sources/',
-    data: payload
-  })
+    method: "POST",
+    url: "https://yourstory-server.vercel.app/sources",
+    data: payload,
+  });
   // .then(res => dispatch(postStorySuccess(res)))
   // .catch(err => dispatch(postStoryFailure(err)))
-}
+};
 
-export const postBookMarkReq = (payload)=>({
-  type:BOOKMARK_REQUEST,
-  payload
-})
+export const postBookMarkReq = (payload) => ({
+  type: BOOKMARK_REQUEST,
+  payload,
+});
 
-export const postBookMarkSuccess = (payload)=>({
-  type:BOOKMARK_SUCCESS,
-  payload
-})
+export const postBookMarkSuccess = (payload) => ({
+  type: BOOKMARK_SUCCESS,
+  payload,
+});
 
-export const postBookMarkFailure = (payload)=>({
-  type:BOOKMARK_FAILURE,
-  payload
-})
+export const postBookMarkFailure = (payload) => ({
+  type: BOOKMARK_FAILURE,
+  payload,
+});
 
-export const postBookMarkData = (payload)=>(dispatch)=>{
-  dispatch(postBookMarkReq())
+export const postBookMarkData = (payload) => (dispatch) => {
+  dispatch(postBookMarkReq());
   axios({
-    method:"post",
-    url:"http://localhost:3002/bookmark",
-    data:payload
+    method: "post",
+    url: "https://yourstory-server.vercel.app/bookmark",
+    data: payload,
   })
-  .then(res=>dispatch(postBookMarkSuccess({message:"bookmark added"})))
-  .catch(err=>dispatch(postBookMarkFailure({message:"error"})))
-}
+    .then((res) => dispatch(postBookMarkSuccess({ message: "bookmark added" })))
+    .catch((err) => dispatch(postBookMarkFailure({ message: "error" })));
+};
 
+export const getBookMarkReq = (payload) => ({
+  type: GET_BOOKMARK_REQUEST,
+  payload,
+});
 
-export const getBookMarkReq = (payload)=>({
-  type:GET_BOOKMARK_REQUEST,
-  payload
-})
+export const getBookMarkSuccess = (payload) => ({
+  type: GET_BOOKMARK_SUCCESS,
+  payload,
+});
 
-export const getBookMarkSuccess = (payload)=>({
-  type:GET_BOOKMARK_SUCCESS,
-  payload
-})
+export const getBookMarkFailure = (payload) => ({
+  type: GET_BOOKMARK_FAILURE,
+  payload,
+});
 
-export const getBookMarkFailure = (payload)=>({
-  type:GET_BOOKMARK_FAILURE,
-  payload
-})
-
-export const getBookMarkData = (payload)=>(dispatch)=>{
-  dispatch(getBookMarkReq())
+export const getBookMarkData = (payload) => (dispatch) => {
+  dispatch(getBookMarkReq());
   axios({
-    method:"get",
-    url:"http://localhost:3002/bookmark",
+    method: "get",
+    url: "https://yourstory-server.vercel.app/bookmark",
   })
-  .then(res=>dispatch(getBookMarkSuccess(res.data)))
-  .catch(err=>dispatch(getBookMarkFailure({message:"error"})))
-}
+    .then((res) => dispatch(getBookMarkSuccess(res.data)))
+    .catch((err) => dispatch(getBookMarkFailure({ message: "error" })));
+};

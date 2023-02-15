@@ -29,7 +29,7 @@ export const registerData = (payload)=>(dispatch)=>{
     dispatch(registerRequest())
     axios({
         method:"post",
-        url:"http://localhost:3002/user",
+        url:"https://yourstory-server.vercel.app/user",
         data:payload
     })
     .then((res)=>{
@@ -64,7 +64,7 @@ export const loginData = (payload)=>(dispatch)=>{
     dispatch(loginRequest())
     axios({
         method:"get",
-        url:"http://localhost:3002/user",
+        url:"https://yourstory-server.vercel.app/user",
     })
     .then((res)=>{
         console.log(res.data)
